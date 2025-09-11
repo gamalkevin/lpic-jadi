@@ -9,7 +9,10 @@ I target to finish at least 1 video daily *(with strict adherence to '**the stra
 - After watching the video, skim-read again the written note; and
 - Practice/redo actions from the video *(if applicable)*
 
+## Post Chapters
+I will review a week of learning by skim-reading notes.
+
 ## Current Progress
-As of **10 Sept 2025**, I'm watching video [004](https://youtu.be/xCPDxgp0zXY?si=8ce2ZOach2HerWf_&t=9).
+As of **11 Sept 2025**, I've just finished learning with video [004](https://youtu.be/xCPDxgp0zXY?si=8ce2ZOach2HerWf).
 
-
+Will continue on to video [005](https://youtu.be/879oHKwgDG8?si=BByV3rbU5si8VSPH).
