@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Obsidian system files
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/obsidian-git/data.json
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/node_modules/
+.obsidian/plugins/*/dist/
+
+# Optional: ignore entire .obsidian folder except config
+# (uncomment if you only want to sync vault settings, not plugins)
+# .obsidian/*
+# !.obsidian/config
+# !.obsidian/themes
+# !.obsidian/snippets
+
+# Obsidian cache & logs
+.obsidian/cache/
+.obsidian/graph.json
+.obsidian/backups/
+
+# Other stuff
+*.log
