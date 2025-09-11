@@ -3,14 +3,10 @@ I have already watched these videos, and determined that there's no need to writ
 
 I'll document my labs here anyway, shall the needs of references arise.
 
----
-
 ## Virt. Platform 🏗️
 I'm using [QEMU-KVM](https://tinypilotkvm.com/blogs/insights/kvm-vs-qemu) for all of my labs virtualization, as its hardware passthrough is vastly superior compared to other virtualization software, enabling near-native GPU and device performance in a VM[^1].
 
 [^1]: [QEMU vs VirtualBox vs VMWare](https://www.diskinternals.com/vmfs-recovery/qemu-vs-virtualbox-vs-vmware/)
-
----
 
 ## Lab 1 - Fedora 🎩
 Specifications: 
@@ -20,8 +16,6 @@ Specifications:
 - 8000 MiB RAM
 - 30 GiB VirtIO Disk 1:
 	- `/var/lib/libvirt/images/fedora42.qcow2`
-
----
 
 ## Lab 2 - Ubuntu 🐦‍⬛
 Specifications:

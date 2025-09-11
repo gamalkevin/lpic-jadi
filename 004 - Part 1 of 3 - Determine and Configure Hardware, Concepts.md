@@ -1,6 +1,6 @@
 # 004 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
 
-# Hardware 🖥️
+## Hardware 🖥️
 This concept is among the harder topics for LPIC. It is generally easier to do more 'complicated' tasks like setting up web servers, since we are executing commands and expect it to behave accordingly. 
 
 Even a lot of professional Linux Administrators [never configured hardware settings](https://youtu.be/xCPDxgp0zXY?si=IxEF1shxlCiKCLsX&t=58). They work on systems that are (already) working. No need to troubleshoot specific driver(s), or peripherals from years ago.
