@@ -1,3 +1,6 @@
 {
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "cssTheme": "Obsidianite",
+  "showRibbon": false,
+  "showViewHeader": false
 }
