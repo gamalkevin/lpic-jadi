@@ -109,3 +109,7 @@ This detaches a device from its driver.
     - **device** → hardware instance
     - **driver** → software handler
 4. Mostly **read-only**, some files are writable for control/tuning.
+
+---
+
+[Reference](https://chatgpt.com/share/68c50cfc-6d14-8002-b7d7-7fcec27c8a3a)

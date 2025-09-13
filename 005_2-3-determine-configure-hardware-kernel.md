@@ -33,7 +33,12 @@ Let's see how both of them interact:
 
 It might look like a bunch of files, where we can `cd` and browse, but the files are not like common files. Sysfs is _readable and sometimes writable_, but it does **not exist on disk**; the kernel generates it dynamically.
 
-*A more complete sysfs explanation can be found [here](References/sysfs-explained.md).*
+### Analogy
+- **Kernel** = the manager who controls all the hardware tools.
+- **Sysfs** = a glass window into the manager’s office, with a few buttons we're allowed to press.
+- When we press a button (*write to sysfs*), the manager acts — possibly reconfiguring or telling hardware to change behavior.
+
+*A more complete sysfs explanation can be accessed [here](References/sysfs-explained.md).*
 
 ## Userspace `/dev` / `udev`
 	
