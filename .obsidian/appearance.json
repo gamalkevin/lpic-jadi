@@ -1,6 +1,7 @@
 {
   "baseFontSizeAction": true,
-  "cssTheme": "Obsidianite",
+  "cssTheme": "Primary",
   "showRibbon": false,
-  "showViewHeader": false
+  "showViewHeader": false,
+  "accentColor": "#a560be"
 }

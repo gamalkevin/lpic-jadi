@@ -1,7 +1,7 @@
 # 004 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
 
 ## Hardware 🖥️
-This concept is among the harder topics for LPIC. It is generally easier to do more 'complicated' tasks like setting up web servers, since we are executing commands and expect it to behave accordingly. 
+This concept is among the harder topics in LPIC. It is generally easier to do more 'complicated' tasks like setting up web servers, since we are executing commands and expect it to behave accordingly. 
 
 Even a lot of professional Linux Administrators [never configured hardware settings](https://youtu.be/xCPDxgp0zXY?si=IxEF1shxlCiKCLsX&t=58). They work on systems that are (already) working. No need to troubleshoot specific driver(s), or peripherals from years ago.
 
@@ -21,7 +21,7 @@ Even a lot of professional Linux Administrators [never configured hardware setti
 ## Peripherals
 In the early days, computers are made as a 'block'. Meaning, everything was assembled without a way to change parts. 
 
-For example, there is no way to upgrade an existing modem in the computer. You have to buy a whole new computer. This was incredibly expensive and wasteful.
+For example, there was no way to upgrade an existing modem in computers. You had to buy a whole new computer for even a single upgrade. This was incredibly expensive and wasteful.
 
 Thus, peripherals are made. We can swap out RAM sticks, processors, etc.
 
