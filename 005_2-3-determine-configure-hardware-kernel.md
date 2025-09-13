@@ -28,6 +28,6 @@ Let's see how both of them interact:
 `Sysfs` is a **pseudo, virtual filesystem** in Linux.
 - It is **mounted at `/sys`**.
 - Purpose: Expose **kernel objects, attributes, and device info** to user space.
-- Think of it as a **window into the kernel**, letting you inspect and sometimes configure devices, buses, and drivers.
+- Think of it as a **window into the kernel**, letting us inspect and sometimes configure devices, buses, and drivers.
 
-It might look like a bunch of files, where we can `cd` and browse, but they are not exactly like common files. Sysfs is _readable and sometimes writable_, but it does **not exist on disk**; the kernel generates it dynamically.
+It might look like a bunch of files, where we can `cd` and browse, but the files are not like common files. Sysfs is _readable and sometimes writable_, but it does **not exist on disk**; the kernel generates it dynamically.
