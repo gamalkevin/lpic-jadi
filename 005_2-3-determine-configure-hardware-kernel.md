@@ -1,8 +1,19 @@
 # 005 - Part 2 of 3 - Determine and Configure Hardware, Kernel 🌽
 So we just learned about hardware in previous video, now we're diving into Linux system. Before we start on learning from the video, let's learn about...
 
-## Linux Kernel
+## 'Kernel vs User' Space
 *Jadi doesn't cover this in the video, so I figured I get an info on this matter on my own, so I don't have to look elsewhere for references.*
+
+### Two “worlds” in Linux memory
+When the OS runs, memory is split into **two regions**:
+1. **Kernel space**
+    - Where the Linux **kernel code** runs.
+    - Has **full access** to hardware (CPU, RAM, disks, devices).
+    - Dangerous if something goes wrong (can crash the whole system).
+2. **User space**
+    - Where **applications/programs** run (like Firefox, bash, Python).
+    - Restricted: can’t directly touch hardware.
+    - Must ask the kernel (via **system calls**) if they need hardware access.
 
 **💡 Quick analogy:**
 - **Kernel:** The “brain” of the OS, controlling all operations.
