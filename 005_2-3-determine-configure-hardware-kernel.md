@@ -1,4 +1,4 @@
-# 005 - Part 2 of 3 - Determine and Configure Hardware, Kernel 🌽
+# 005 - Part 2 of 3 - Determine and Configure Hardware, Commands 🌽
 So we just learned about hardware in previous video, now we're diving into Linux system. Before we start on learning from the video, let's learn about...
 
 ## 'Kernel vs User' Space
@@ -52,3 +52,70 @@ It might look like a bunch of files, where we can `cd` and browse, but the files
 *A more complete sysfs explanation can be accessed [here](References/sysfs-explained.md).*
 
 ## Userspace `/dev` / `udev`
+
+- **`udev`** is the **user-space manager** for `/dev/`.  
+- `/dev/` is where Linux keeps **device files** (like `/dev/sda` for disks, `/dev/ttyUSB0` for serial adapters).
+- Without device files, programs can’t talk to hardware.
+
+### Why `udev` is needed?
+- Old Linux systems had a **static `/dev/`**: thousands of files for devices we didn’t even have.
+- `udev` makes `/dev/` **dynamic**: 
+    - When we plug in a device → `udev` creates the right file.
+    - When we remove it → `udev` deletes it.
+
+### How it works
+1. We plug in hardware (say, USB drive).
+2. **Kernel detects** it and sends an event.
+3. **`udev` listens** to these events.
+4. `udev` uses **rules** to decide:
+    - Create device file (`/dev/sdb`).
+    - Give it the right permissions.
+    - Maybe add a symlink (`/dev/disk/by-uuid/...`).
+5. Now programs can use it safely.
+
+### Quick Example
+Plug in a USB stick → `/dev/sdb` appears.  
+Unplug it → `/dev/sdb` disappears.
+
+That’s **udev in action**.
+
+✅ **Summary in one line:** `udev` is the **userspace service that manages `/dev/` dynamically**, so device files appear/disappear automatically when hardware changes.
+
+## D-Bus
+Think of it like Linux’s **internal messaging system**.
+
+### What is D-Bus?
+
+- **D-Bus** = **Desktop Bus / message bus**.
+- It’s a **communication system** that lets **programs talk to each other**.
+- Runs in **user space**.
+- Think of it as a **mailroom or post office inside Linux**.
+
+### Why we need it
+- Programs often need to **coordinate or share info**:
+    - Example: `NetworkManager` tells the system a Wi-Fi connection is active.
+    - Example: A media player asks the sound system to play music.
+- Without D-Bus, programs would have to directly connect to each other, which is messy.
+
+### How it works
+- **Programs (clients)** send messages to the **D-Bus daemon**.
+- D-Bus daemon delivers messages to the **right program (service)**.
+
+**Example:**
+1. You plug in a USB drive.
+2. Kernel triggers `udev` → device node created in `/dev/`.
+3. D-Bus notifies your **file manager** that a new device is available.
+4. File manager shows a popup for the USB stick.
+
+### Types of D-Bus
+1. **System bus** → for system-wide messages (hardware events, power, network).
+    - Runs as root, everyone can listen with permission.
+2. **Session bus** → per user session (desktop apps talking to each other).
+
+### Super-simple analogy
+
+- **D-Bus** = Linux’s **internal post office**.
+- Programs drop messages into the bus → bus delivers to the correct recipient.
+- Makes Linux programs **cooperative** without hard-wiring them together.
+
+✅ **In one line:**  D-Bus is a **user-space messaging system** that lets programs and services on Linux **talk to each other safely and efficiently**.
