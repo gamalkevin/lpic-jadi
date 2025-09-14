@@ -41,4 +41,3 @@ It might look like a bunch of files, where we can `cd` and browse, but the files
 *A more complete sysfs explanation can be accessed [here](References/sysfs-explained.md).*
 
 ## Userspace `/dev` / `udev`
-	
