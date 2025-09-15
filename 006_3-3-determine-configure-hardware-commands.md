@@ -106,4 +106,37 @@ Running `lshw` by itself, you will be suggested to run it with elevated commands
 - Even using `-short` option, it will still list all classes of hardware installed in your system. 
 - You might want to run it using `-class` option, so it's easier to read through.
 
-## Loadable Kernel Modules
+##  Loadable Kernel Modules (LKMs)
+
+- The **kernel** is the core of Linux.
+- Normally, we’d have to **rebuild the whole kernel** to add new features (like support for new hardware).
+
+👉 To avoid that, Linux uses **Loadable Kernel Modules**:
+- **Small pieces of code** that can be added to (or removed from) the running kernel **without rebooting**.
+- Think of them as **“plugins” for the kernel**.
+
+### Examples
+- Drivers for devices: Wi-Fi cards, USB devices, graphics drivers.
+- Filesystem support: ext4, NTFS, FAT32.
+- Network protocols or security modules.
+
+### Commands to manage them
+- `lsmod` → list currently loaded modules.
+- `modprobe <module>` → load a module (and dependencies).
+- `rmmod <module>` → remove a module.
+- `modinfo <module>` → show info about a module.
+
+Previously, `insmod` was used to load modules, but there were some downsides:
+- `insmod` does not automatically get the dependencies; and
+- The whole path to the module had to be inserted. Painfully annoying.
+
+
+### Is it comparable to drivers on Windows?
+Yes, **almost**. 
+
+LKMs are **modular, can be inserted/removed at runtime**, whereas Windows drivers often come as part of the OS or installed manually and may require reboot for some changes.
+
+To put simply:
+- **Linux LKM = modular kernel code, usually drivers**    
+- **Windows driver = usually hardware driver**
+- **So yes, when talking about hardware, we can treat LKMs as the Linux equivalent of Windows drivers.**
