@@ -19,7 +19,8 @@ Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 ```
 
 ### lspci
-Lists all PCI devices:
+- Lists hardware connected through the PCI/PCIe bus (common connection method inside computers).
+- *Examples: graphics card, network card, sound card, USB controllers.*
 ```
 $ lspci
 00:00.0 Host bridge: Advanced Micro Devices, Inc. [AMD] Raven/Raven2 Root Complex
@@ -51,7 +52,7 @@ $ lspci
 03:00.6 Audio device: Advanced Micro Devices, Inc. [AMD] Family 17h/19h/1ah HD Audio Controller
 04:00.0 SATA controller: Advanced Micro Devices, Inc. [AMD] FCH SATA Controller [AHCI mode] (rev 61)
 ```
-*Quite a list, huh? So crowded.*
+*Quite a list, huh? Wait 'till you see `lshw`.*
 
 ### lsblk
 This is almost like a personal favorite; I use it a lot whenever doing partitioning or tinkering with USB bootables.
@@ -96,6 +97,11 @@ sdb      8:16   0 119.2G  0 disk
     - Normal drives → `0`
     - Mounted ISO file or write-protected USB → `1`
 
-👉 So for example:
-- `sda` (`8:0`) → internal non-removable, read-write disk.
-- `sdb` (`8:16`) → removable (USB stick), read-write.
+### lshw
+- Stands for **List Hardware**.
+- Shows **detailed information** about the system's hardware, and goes much deeper than `lsblk`, `lspci`, or `lsusb`.
+- *Covers: CPU, RAM, motherboard, firmware/BIOS, storage, network cards, etc.*
+
+Running `lshw` by itself, you will be suggested to run it with elevated commands, since it will yield more accurate results. I won't post my full `lshw` here, since it's incredibly long. 
+- Even using `-short` option, it will still list all classes of hardware installed in your system. 
+- You might want to run it using `-class` option, so it's easier to read through.
