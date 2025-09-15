@@ -105,3 +105,5 @@ sdb      8:16   0 119.2G  0 disk
 Running `lshw` by itself, you will be suggested to run it with elevated commands, since it will yield more accurate results. I won't post my full `lshw` here, since it's incredibly long. 
 - Even using `-short` option, it will still list all classes of hardware installed in your system. 
 - You might want to run it using `-class` option, so it's easier to read through.
+
+## Loadable Kernel Modules
