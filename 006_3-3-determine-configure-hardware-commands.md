@@ -127,9 +127,13 @@ Running `lshw` by itself, you will be suggested to run it with elevated commands
 - `modinfo <module>` → show info about a module.
 
 Previously, `insmod` was used to load modules, but there were some downsides:
-- `insmod` does not automatically get the dependencies; and
+- `insmod` does not automatically handle dependencies; and
 - The whole path to the module had to be inserted. Painfully annoying.
+- Usage example:
+	- `sudo insmod /lib/modules/5.15.0-xyz/kernel/drivers/net/wifi/wifi.ko`
+- If the module requires another module first, `insmod` will **fail**.
 
+So now, `modprobe` is the way to go. It handles dependencies automatically by consulting `/lib/modules/$(uname -r)/modules.dep`.
 
 ### Is it comparable to drivers on Windows?
 Yes, **almost**. 
