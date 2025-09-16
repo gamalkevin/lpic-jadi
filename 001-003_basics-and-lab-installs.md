@@ -1,4 +1,5 @@
 # 001-003 - Basics and Lab Installations
+
 I have already watched these videos, and determined that there's no need to write down the notes of these videos.
 
 I'll document my labs here anyway, shall the needs of references arise.
