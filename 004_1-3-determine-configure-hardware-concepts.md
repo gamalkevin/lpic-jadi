@@ -1,5 +1,7 @@
 # 004 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
 
+We're starting with [LPIC Topic 101.1](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings).
+
 ## Hardware 🖥️
 This concept is among the harder topics in LPIC. It is generally easier to do more 'complicated' tasks like setting up web servers, since we are executing commands and expect it to behave accordingly. 
 
@@ -41,3 +43,7 @@ PCI has since evolved into PCIe (e stands for express):
 - As the name suggests, it's general. Think of it as programmable digital pin
 - The pins can be controlled/accessed separately (no need to use all the pins at once)
 - The pins are **binary**. Basically every pin is either on or off, which can later be configured as far as you want. 
+
+---
+
+First part done, let's head to [part 2 of 3](./005_2-3-determine-configure-hardware-kernel.md) next.

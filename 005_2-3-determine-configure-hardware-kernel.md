@@ -119,3 +119,7 @@ Think of it like Linux’s **internal messaging system**.
 - Makes Linux programs **cooperative** without hard-wiring them together.
 
 ✅ **In one line:**  D-Bus is a **user-space messaging system** that lets programs and services on Linux **talk to each other safely and efficiently**.
+
+---
+
+Now, on to the [last part](./006_3-3-determine-configure-hardware-commands.md) on this topic.

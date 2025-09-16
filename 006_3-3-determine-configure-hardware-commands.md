@@ -1,4 +1,4 @@
-# 005 - Part 2 of 3 - Determine and Configure Hardware, Commands 📣
+# 006 - Part 3 of 3 - Determine and Configure Hardware, Commands 📣
 After learning about hardware, let's take a look into the 'basic' commands that touch them.
 
 ## **lsusb, lspci, lsblk, lshw**
@@ -144,3 +144,7 @@ To put simply:
 - **Linux LKM = modular kernel code, usually drivers**    
 - **Windows driver = usually hardware driver**
 - **So yes, when talking about hardware, we can treat LKMs as the Linux equivalent of Windows drivers.**
+
+---
+
+With this, we finish the third part of [LPIC Topic 101.1](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings).
