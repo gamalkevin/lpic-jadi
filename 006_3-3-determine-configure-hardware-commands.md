@@ -1,4 +1,4 @@
-# 006 - Part 3 of 3 - Determine and Configure Hardware, Commands 📣
+# 006 - 101.1 - Part 3 of 3 - Determine and Configure Hardware, Commands 📣
 After learning about hardware, let's take a look into the 'basic' commands that touch them.
 
 ## **lsusb, lspci, lsblk, lshw**
@@ -120,11 +120,6 @@ Running `lshw` by itself, you will be suggested to run it with elevated commands
 - Filesystem support: ext4, NTFS, FAT32.
 - Network protocols or security modules.
 
-### Interesting Notes
-- Many hardware vendors don't provide proper driver (sometimes not even providing it altogether).
-- Like Nvidia, they provide closed-source, binary-only drivers. There's a community-made one, but doesn't perform as well as Nvidia's proprietary driver.
-- Nowadays, modern hardware accessories tend to be plug and play, since Linux kernel already include a lot of drivers.
-
 ### Commands to manage them
 - `lsmod` → list currently loaded modules.
 - `modprobe <module>` → load a module (and dependencies).
@@ -149,6 +144,12 @@ To put simply:
 - **Linux LKM = modular kernel code, usually drivers**    
 - **Windows driver = usually hardware driver**
 - **So yes, when talking about hardware, we can treat LKMs as the Linux equivalent of Windows drivers.**
+
+### Interesting Notes
+- Many hardware vendors don't provide proper driver (sometimes not even providing it altogether).
+- Nvidia provides closed-source, binary-only drivers; a debatable decision in the community. 
+	- There's a community-made one, but doesn't perform as well as Nvidia's proprietary driver.
+- Nowadays, modern hardware accessories tend to be plug and play, since Linux kernel already include a lot of drivers. Many are reverse-engineered.
 
 ---
 

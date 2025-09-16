@@ -1,4 +1,4 @@
-# 005 - Part 2 of 3 - Determine and Configure Hardware, Kernel 🌽
+# 005 - 101.1 - Part 2 of 3 - Determine and Configure Hardware, Kernel 🌽
 So we just learned about hardware in previous video, now we're diving into Linux system. Before we start on learning from the video, let's learn about...
 
 ## 'Kernel vs User' Space

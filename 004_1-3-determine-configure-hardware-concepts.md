@@ -1,6 +1,7 @@
-# 004 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
+# 004 - 101.1 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
 
-We're starting with [LPIC Topic 101.1](https://www.lpi.org/our-certifications/exam-101-102-objectives/#101.1_Determine_and_configure_hardware_settings).
+We're starting with: 
+- **LPIC Topic 101.1: - Determine and configure hardware settings**.
 
 ## Hardware 🖥️
 This concept is among the harder topics in LPIC. It is generally easier to do more 'complicated' tasks like setting up web servers, since we are executing commands and expect it to behave accordingly. 
