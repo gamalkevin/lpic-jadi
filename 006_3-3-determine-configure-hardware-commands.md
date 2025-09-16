@@ -120,6 +120,11 @@ Running `lshw` by itself, you will be suggested to run it with elevated commands
 - Filesystem support: ext4, NTFS, FAT32.
 - Network protocols or security modules.
 
+### Interesting Notes
+- Many hardware vendors don't provide proper driver (sometimes not even providing it altogether).
+- Like Nvidia, they provide closed-source, binary-only drivers. There's a community-made one, but doesn't perform as well as Nvidia's proprietary driver.
+- Nowadays, modern hardware accessories tend to be plug and play, since Linux kernel already include a lot of drivers.
+
 ### Commands to manage them
 - `lsmod` → list currently loaded modules.
 - `modprobe <module>` → load a module (and dependencies).
