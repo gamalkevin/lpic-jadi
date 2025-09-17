@@ -3,7 +3,7 @@
 ## The Boot Process
 We have very little control during the first moments of turning on the computer. Let's understand more what's happening:
 1. Motherboard firmware does a PowerOnSelfTest / **POST**
-	1. It's checking whether the hardware are adequate to run the bootloader, which continues the booting process.
+	1. It's checking and testing available hardware, which continues the booting process if everything goes well.
 2. All is well, the motherboard loads the bootloader
 3. Bootloader loads the kernel and its configs
 	1. In GRUB (The current default bootloader for Linux), we can customize the behavior of the Linux distro that we're booting: different kernel versions, safe-mode, terminal only, etc.
@@ -14,4 +14,6 @@ We have very little control during the first moments of turning on the computer.
 
 ## Boot Process Analogies
 To understand the boot process, I headed to ChatGPT to obtain some useful analogies. Access them [here](./References/boot-process-analogies.md).
+
+
 
