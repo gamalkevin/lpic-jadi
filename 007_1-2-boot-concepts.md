@@ -1,4 +1,5 @@
 # 007 - 101.2 - Part 1 of 2 - The Boot Process; Concepts 📚️
+Continuing with **LPIC Topic 101.2: Boot the system**.
 
 ## The Boot Process
 We have very little control during the first moments of turning on the computer. Let's understand more what's happening:
@@ -13,7 +14,7 @@ We have very little control during the first moments of turning on the computer.
 6. System ready to use
 
 ## Boot Process Analogies
-To understand the boot process, I headed to ChatGPT to obtain some useful analogies. Access them [here](./References/boot-process-analogies.md).
+To understand the boot process, I asked ChatGPT to obtain some useful analogies. Access them [here](./References/boot-process-analogies.md).
 
 ## Linux vs. GNU/Linux  
 - **Linux** strictly means the **kernel**, the core program that manages hardware and system resources.  
