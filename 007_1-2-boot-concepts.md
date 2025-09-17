@@ -15,5 +15,9 @@ We have very little control during the first moments of turning on the computer.
 ## Boot Process Analogies
 To understand the boot process, I headed to ChatGPT to obtain some useful analogies. Access them [here](./References/boot-process-analogies.md).
 
-
+## Linux vs. GNU/Linux  
+- **Linux** strictly means the **kernel**, the core program that manages hardware and system resources.  
+- By itself, the kernel can’t do much—you wouldn’t even have commands like `ls` or `cd`.  
+- When combined with the **GNU tools** (shell, utilities, libraries), it forms a complete operating system.  
+- Most distributions are this combination, which is why the technically accurate name is **GNU/Linux**—though in practice, people usually just say **Linux**.  
 
