@@ -18,4 +18,8 @@ Upon boot, all kernel messages (*hardware, drivers, boot events, etc.*) are stor
 After the kernel finishes loading, the system needs to start other programs. That’s where `init` comes in—it’s the first process that launches and manages system programs (*like webserver, ntp/network time protocol, ssh, etc.*) to get the system fully running. 
 
 Some `init` system examples:
-- **SysVinit**, based on Unix System V. The old guard. 
+- **SysVinit**, based on Unix System V. The old guard. No longer used widely due to it having limited capabilities.
+- **systemd**, the current, widely used init. Can start services in parallel; many useful and fancy features.
+- **runit** a fast, simple init system that can start services in parallel. 
+- **upstart** event-based, initiated by Canonical, the company behind Ubuntu. Started in 2014, discontinued in 2015. 
+
