@@ -38,7 +38,8 @@ Let's try viewing my default mode:
 ```
 $ systemctl get-default
 graphical.target
-[kev@Randrake system]$ systemctl cat graphical.target
+
+$ systemctl cat graphical.target
 # /usr/lib/systemd/system/graphical.target
 #  SPDX-License-Identifier: LGPL-2.1-or-later
 #
@@ -59,6 +60,37 @@ After=multi-user.target rescue.service rescue.target display-manager.service
 AllowIsolate=yes
 
 ```
+The way the unit is described reminds me of how `pacui` lists packages: Note how the `Requires` and `Wants` of systemd has the same spirit with pacman `must-have` and `optional dependency`. I know it's definitely the other way around, but I learned it that way.
+
+Now let's try viewing a service status:
+```
+$ systemctl status NetworkManager --no-pager -l
+● NetworkManager.service - Network Manager
+     Loaded: loaded (/usr/lib/systemd/system/NetworkManager.service; enabled; preset: disabled)
+     Active: active (running) since Sat 2025-09-27 09:13:11 +07; 3h 41min ago
+ Invocation: 21b3bf43876e4b50bfe06a7fd3961655
+       Docs: man:NetworkManager(8)
+   Main PID: 576 (NetworkManager)
+      Tasks: 4 (limit: 22563)
+     Memory: 22.4M (peak: 23.5M)
+        CPU: 8.924s
+     CGroup: /system.slice/NetworkManager.service
+             └─576 /usr/bin/NetworkManager --no-daemon
+
+Sep 27 12:31:48 Randrake NetworkManager[576]: <info>  [1758951108.5453] device (wlp3s0f3u2): supplicant interface state: interface_disabled -> inactive
+Sep 27 12:38:41 Randrake NetworkManager[576]: <info>  [1758951521.5337] device (wlp3s0f3u2): set-hw-addr: set MAC address to 16:98:97:CC:78:5B (scanning)
+Sep 27 12:38:41 Randrake NetworkManager[576]: <info>  [1758951521.5525] device (wlp3s0f3u2): supplicant interface state: inactive -> interface_disabled
+Sep 27 12:38:41 Randrake NetworkManager[576]: <info>  [1758951521.5531] device (wlp3s0f3u2): supplicant interface state: interface_disabled -> inactive
+Sep 27 12:45:34 Randrake NetworkManager[576]: <info>  [1758951934.5331] device (wlp3s0f3u2): set-hw-addr: set MAC address to 9A:EF:AB:F8:8C:12 (scanning)
+Sep 27 12:45:34 Randrake NetworkManager[576]: <info>  [1758951934.5520] device (wlp3s0f3u2): supplicant interface state: inactive -> interface_disabled
+Sep 27 12:45:34 Randrake NetworkManager[576]: <info>  [1758951934.5527] device (wlp3s0f3u2): supplicant interface state: interface_disabled -> inactive
+Sep 27 12:52:27 Randrake NetworkManager[576]: <info>  [1758952347.5281] device (wlp3s0f3u2): set-hw-addr: set MAC address to 7A:BF:EB:C5:2B:CA (scanning)
+Sep 27 12:52:27 Randrake NetworkManager[576]: <info>  [1758952347.5469] device (wlp3s0f3u2): supplicant interface state: inactive -> interface_disabled
+Sep 27 12:52:27 Randrake NetworkManager[576]: <info>  [1758952347.5474] device (wlp3s0f3u2): supplicant interface state: interface_disabled -> inactive
+```
+*I used the `--no-pager` along with `-l` for full output without pager, so I could copy it here.*
+
+Note that you can visually divide the neat part above and the long wall of text at the bottom: top one is the info, and bottom one is the log.
 
 ### SysVinit
 
