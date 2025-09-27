@@ -92,5 +92,8 @@ Sep 27 12:52:27 Randrake NetworkManager[576]: <info>  [1758952347.5474] device (
 
 Note that you can visually divide the neat part above and the long wall of text at the bottom: top one is the info, and bottom one is the log.
 
+When running `systemctl list-unit-files`, it will show the state and (default) preset of each unit files.
+- There are three states: active, 
+
 ### SysVinit
 
