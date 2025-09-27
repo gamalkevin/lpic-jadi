@@ -9,6 +9,7 @@
 1. **Init replacement**
     - In older Linux, `init` (SysVinit) handled startup.
     - Today, `systemd` is the modern replacement.
+    - [[#Systemd vs SysVinit Cheat Sheet]]
 2. **Service management**
     - Starts, stops, restarts background services (daemons).
     - Example: `systemctl start sshd`
@@ -18,6 +19,7 @@
 4. **Unit files**
     - Instead of messy shell scripts, systemd uses **unit files** to define services, targets, sockets, etc.
     - Example: `/etc/systemd/system/sshd.service`
+    - Complete list of the units below: [[#Systemd Units]].
 5. **Other tools** (all under systemd umbrella):
     - `journald` → logging system
     - `logind` → user sessions and power management
@@ -39,6 +41,19 @@ systemctl disable sshd      # don’t start on boot
 - Uses **unit files** instead of old SysVinit scripts
 - Controlled with **`systemctl`**
 
+### Systemd Units
+|**Unit Type**|**Extension**|**What it controls**|
+|---|---|---|
+|**Service**|`.service`|A background program (e.g. `sshd.service`, `nginx.service`)|
+|**Target**|`.target`|A group of units (like old runlevels) — e.g. `multi-user.target`, `graphical.target`|
+|**Device**|`.device`|Hardware devices recognized by the kernel (via udev/sysfs)|
+|**Mount**|`.mount`|A filesystem mount point (e.g. `/home`, `/mnt/usb`)|
+|**Automount**|`.automount`|Auto-mounted filesystem (mount on first access)|
+|**Socket**|`.socket`|Communication sockets (used to start services on demand)|
+|**Timer**|`.timer`|Like cron jobs, scheduled events (e.g. `logrotate.timer`)|
+|**Path**|`.path`|Watches files/directories and triggers services when they change|
+|**Slice**|`.slice`|Resource control (CPU, memory) via cgroups|
+|**Scope**|`.scope`|External processes not started by systemd (e.g. user sessions)|
 
 
 ## Systemd vs SysVinit Cheat Sheet
