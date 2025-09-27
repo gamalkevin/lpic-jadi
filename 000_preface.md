@@ -13,7 +13,7 @@ I target to finish at least 1 video daily *(with strict adherence to '**the stra
 I will review a week of learning by skim-reading notes.
 
 ## Current Progress
-As of **14 Sept 2025**, I'm just getting started with video [006](https://youtu.be/b5bAXRSYmoA).
+As of **27 Sept 2025**, I'm just getting started with video [008](https://youtu.be/Sn20NKM0hbw).
 
 ## Funny realization
 As you might see, I [created and documented](./001-003_basics-and-lab-installs.md) two virtual labs for this study project. Turns out, I don't quite need them, since I'm learning on Manjaro, which is already a Linux system.

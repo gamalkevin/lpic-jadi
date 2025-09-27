@@ -23,3 +23,5 @@ Some `init` system examples:
 - **runit** a fast, simple init system that can start services in parallel. 
 - **upstart** event-based, initiated by Canonical, the company behind Ubuntu. Started in 2014, discontinued in 2015. 
 
+## Systemd
+`systemd` works by having **units**. 
