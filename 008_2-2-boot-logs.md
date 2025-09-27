@@ -30,5 +30,35 @@ The new, flashy guy. Lots of debate.
 
 It is monolithic, meaning it behaves more like a corporation with united vision rather than a group of independent volunteers.
 
-`systemd` works by having [units](References/init-systems.md#systemd-units).
+It is super complicated (supports hierarchy, timers, etc.), and for many people, that is the very argument against using it.
+
+`systemd` works by having [units](References/init-systems.md#systemd-units). To work with units, we use `systemctl` (systemd control?).
+
+Let's try viewing my default mode:
+```
+$ systemctl get-default
+graphical.target
+[kev@Randrake system]$ systemctl cat graphical.target
+# /usr/lib/systemd/system/graphical.target
+#  SPDX-License-Identifier: LGPL-2.1-or-later
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=Graphical Interface
+Documentation=man:systemd.special(7)
+Requires=multi-user.target
+Wants=display-manager.service
+Conflicts=rescue.service rescue.target
+After=multi-user.target rescue.service rescue.target display-manager.service
+AllowIsolate=yes
+
+```
+
+### SysVinit
 
