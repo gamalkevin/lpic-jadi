@@ -25,15 +25,55 @@
     - `logind` → user sessions and power management
     - `timedated`, `networkd`, etc. → modular helpers
 
-### Basic commands (LPIC must-know)
+### `systemctl` cheatsheet
 
-```
-systemctl status sshd       # check if SSH is running
-systemctl start sshd        # start SSH service
-systemctl stop sshd         # stop it
-systemctl enable sshd       # start on boot
-systemctl disable sshd      # don’t start on boot
-```
+#### **1️⃣ Service management**
+|Command|Description|
+|---|---|
+|`systemctl start <unit>`|Start a service immediately.|
+|`systemctl stop <unit>`|Stop a service immediately.|
+|`systemctl restart <unit>`|Stop and start a service (reload config if needed).|
+|`systemctl reload <unit>`|Ask the service to reload config without stopping (if supported).|
+|`systemctl status <unit>`|Show current status, active/inactive, logs.|
+
+#### **2️⃣ Enable/disable services at boot**
+|Command|Description|
+|---|---|
+|`systemctl enable <unit>`|Start automatically at boot.|
+|`systemctl disable <unit>`|Do not start at boot.|
+|`systemctl is-enabled <unit>`|Check if a unit is enabled/disabled.|
+
+
+#### **3️⃣ Check units / targets**
+|Command|Description|
+|---|---|
+|`systemctl list-units`|List **active/running** units.|
+|`systemctl list-unit-files`|List **all unit files** and their enabled/disabled state.|
+|`systemctl list-units --type=service`|List running services only.|
+|`systemctl list-units --type=target`|List active targets.|
+
+#### **4️⃣ Targets / runlevels**
+|Command|Description|
+|---|---|
+|`systemctl get-default`|Show the default target (runlevel).|
+|`systemctl set-default <target>`|Set the default target for boot (e.g., `graphical.target`).|
+|`systemctl isolate <target>`|Switch to a target immediately (like changing runlevel).|
+
+#### **5️⃣ Systemd internals**
+|Command|Description|
+|---|---|
+|`systemctl daemon-reload`|Re-read all unit files (after editing or adding).|
+|`systemctl mask <unit>`|Block a unit from starting at all.|
+|`systemctl unmask <unit>`|Remove the block.|
+|`systemctl show <unit>`|Show detailed info about a unit.|
+
+### ✅ LPIC Takeaway
+
+- **Start/Stop/Restart/Reload** → control running services
+- **Enable/Disable** → control boot behavior
+- **List units** → see what’s running or available
+- **Daemon-reload** → after editing unit files
+- **Targets** → modern replacement for runlevels
 
 ### ✅ LPIC-friendly summary
 - **Systemd = modern init system**
@@ -54,7 +94,6 @@ systemctl disable sshd      # don’t start on boot
 |**Path**|`.path`|Watches files/directories and triggers services when they change|
 |**Slice**|`.slice`|Resource control (CPU, memory) via cgroups|
 |**Scope**|`.scope`|External processes not started by systemd (e.g. user sessions)|
-
 
 ## Systemd vs SysVinit Cheat Sheet
 

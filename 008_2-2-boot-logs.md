@@ -34,6 +34,16 @@ It is super complicated (supports hierarchy, timers, etc.), and for many people,
 
 `systemd` works by having [units](References/init-systems.md#systemd-units). To work with units, we use `systemctl` (systemd control?).
 
+Here are some must-know `systemctl` commands:
+```
+systemctl status sshd       # check if SSH is running
+systemctl start sshd        # start SSH service
+systemctl stop sshd         # stop it
+systemctl enable sshd       # start on boot
+systemctl disable sshd      # don’t start on boot
+```
+A cheat sheet is available here.
+
 Let's try viewing my default mode:
 ```
 $ systemctl get-default
