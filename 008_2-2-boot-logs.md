@@ -30,5 +30,5 @@ The new, flashy guy. Lots of debate.
 
 It is monolithic, meaning it behaves more like a corporation with united vision rather than a group of independent volunteers.
 
-`systemd` works by having **units**. 
+`systemd` works by having [units](References/init-systems.md#systemd-units).
 
