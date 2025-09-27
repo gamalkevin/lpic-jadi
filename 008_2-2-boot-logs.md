@@ -23,5 +23,51 @@ Some `init` system examples:
 - **runit** a fast, simple init system that can start services in parallel. 
 - **upstart** event-based, initiated by Canonical, the company behind Ubuntu. Started in 2014, discontinued in 2015. 
 
-## Systemd
+### Systemd
+The new, flashy guy. Lots of debate. 
+
+It is monolithic, meaning it behaves more like a corporation with united vision rather than a group of independent volunteers.
+
 `systemd` works by having **units**. 
+
+#### What it is
+- **System and Service Manager** for Linux.
+- It’s the **first process** the kernel starts after boot (`PID 1`).
+- Its job: **bring the system from “just kernel” → to a usable OS**.
+
+#### What it does
+1. **Init replacement**
+    - In older Linux, `init` (SysVinit) handled startup.
+    - Today, `systemd` is the modern replacement.
+2. **Service management**
+    - Starts, stops, restarts background services (daemons).
+    - Example: `systemctl start sshd`
+3. **Parallel booting**
+    - Old SysVinit started services one by one (slow).
+    - Systemd starts services **in parallel** if possible → faster boot.
+4. **Unit files**
+    - Instead of messy shell scripts, systemd uses **unit files** to define services, targets, sockets, etc.
+    - Example: `/etc/systemd/system/sshd.service`
+5. **Other tools** (all under systemd umbrella):
+    - `journald` → logging system
+    - `logind` → user sessions and power management
+    - `timedated`, `networkd`, etc. → modular helpers
+
+#### Basic commands (LPIC must-know)
+
+```
+systemctl status sshd       # check if SSH is running
+systemctl start sshd        # start SSH service
+systemctl stop sshd         # stop it
+systemctl enable sshd       # start on boot
+systemctl disable sshd      # don’t start on boot
+```
+
+#### ✅ LPIC-friendly summary
+
+- **Systemd = modern init system**
+- Manages: **boot sequence + services + logging + user sessions**
+- Uses **unit files** instead of old SysVinit scripts
+- Controlled with **`systemctl`**
+
+### Note
