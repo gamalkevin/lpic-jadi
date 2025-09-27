@@ -9,7 +9,7 @@
 1. **Init replacement**
     - In older Linux, `init` (SysVinit) handled startup.
     - Today, `systemd` is the modern replacement.
-    - [[#Systemd vs SysVinit Cheat Sheet]]
+    - [Systemd vs SysVinit Cheat Sheet](./init-systems.md#Systemd%20vs%20SysVinit%20Cheat%20Sheet)
 2. **Service management**
     - Starts, stops, restarts background services (daemons).
     - Example: `systemctl start sshd`
@@ -19,7 +19,7 @@
 4. **Unit files**
     - Instead of messy shell scripts, systemd uses **unit files** to define services, targets, sockets, etc.
     - Example: `/etc/systemd/system/sshd.service`
-    - Complete list of the units below: [[#Systemd Units]].
+    - Complete list of the units below: [Systemd Units](#Systemd%20Units).
 5. **Other tools** (all under systemd umbrella):
     - `journald` → logging system
     - `logind` → user sessions and power management
