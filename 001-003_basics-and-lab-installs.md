@@ -9,6 +9,8 @@ I'm using [QEMU-KVM](https://tinypilotkvm.com/blogs/insights/kvm-vs-qemu) for al
 
 [^1]: [QEMU vs VirtualBox vs VMWare](https://www.diskinternals.com/vmfs-recovery/qemu-vs-virtualbox-vs-vmware/)
 
+## Initial Labs; deleted.
+```
 ## Lab 1 - Fedora 🎩
 Specifications: 
 - **Fedora 42:** [ISO](https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
@@ -26,3 +28,17 @@ Specifications:
 - 8000 MiB RAM
 -  25 GiB VirtIO Disk 1:
 	- `/var/lib/libvirt/images/ubuntu25.04.qcow2`
+```
+
+## Current Lab - Slackware
+After a while, I realized both labs above to be redundant since I am already running Manjaro. However, I discovered later on ([video 009](./009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with `sysvinit`. 
+
+I already have AntiX and MX Linux with `sysvinit`, but both are installed on a USB drive. Since I don
+
+Specifications: 
+- **Slackware 15:** [ISO](https://iso.ukdw.ac.id/slackware/slackware64-15.0-iso/)
+- XFCE
+- 4 vCPU
+- 8192 MiB / 8 GiB RAM
+- 25 GiB VirtIO Disk 1:
+	- `/var/lib/libvirt/images/slackware15.0.qcow2`
