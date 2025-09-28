@@ -44,7 +44,6 @@ According to the `man` [page](https://www.freedesktop.org/software/systemd/man/l
 So if we were to execute `systemctl isolate multi-user`, it will get us out of `graphical.target` and into the defined `multi-user.target`. 
 
 `multi-user.target` doesn't have GUI, so it will bring us to the command-line interface/CLI of the system. See below:
-
-./Files/009_isolate-multi-user.gif
+![isolate multi-user](./Files/009_isolate-multi-user.gif)
 
 Personally,
