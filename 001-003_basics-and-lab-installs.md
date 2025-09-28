@@ -1,15 +1,14 @@
 # 001-003 - Basics and Lab Installations
 
 I have already watched these videos, and determined that there's no need to write down the notes of these videos.
-
-I'll document my labs here anyway, shall the needs of references arise.
+I'll document my labs here anyway, shall the needs for references arise.
 
 ## Virt. Platform 🏗️
 I'm using [QEMU-KVM](https://tinypilotkvm.com/blogs/insights/kvm-vs-qemu) for all of my labs virtualization, as its hardware passthrough is vastly superior compared to other virtualization software, enabling near-native GPU and device performance in a VM[^1].
 
 [^1]: [QEMU vs VirtualBox vs VMWare](https://www.diskinternals.com/vmfs-recovery/qemu-vs-virtualbox-vs-vmware/)
 
-## Initial Labs; deleted.
+## Initial Labs; deleted 🚮
 ```
 ## Lab 1 - Fedora 🎩
 Specifications: 
@@ -30,12 +29,16 @@ Specifications:
 	- `/var/lib/libvirt/images/ubuntu25.04.qcow2`
 ```
 
-## Current Lab - Slackware
-After a while, I realized both labs above to be redundant since I am already running Manjaro. However, I discovered later on ([video 009](./009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with `sysvinit`. 
+## Current Lab - Slackware 🫟
+After a while, I realized both labs above to be redundant since I am already running Manjaro. So I decided to delete both. 
 
-I already have AntiX and MX Linux with `sysvinit`, but both are installed on a USB drive. Since I don
+However, I discovered later on ([video 009](./009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with **SysVinit**. 
 
-Specifications: 
+I already have AntiX and MX Linux with `sysvinit`, but both are installed on a USB drive. Since I don't have a spare laptop to run it side-by-side with my study, I decided to make a KVM/QEMU using MX Linux, though it was ultimately failed (ISO not recognized by `virt-manager`; no time to troubleshoot & need to get it ready quickly).
+
+So I opted to install **Slackware**, which turned out to be as time consuming to install, if not more. *One of the least beginner-friendly distro ever. Dang.* 
+
+Anyways, I got it up and running successfully. Here's the details: 
 - **Slackware 15:** [ISO](https://iso.ukdw.ac.id/slackware/slackware64-15.0-iso/)
 - XFCE
 - 4 vCPU
