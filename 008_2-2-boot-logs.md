@@ -114,10 +114,35 @@ When running `systemctl list-unit-files`, it will show the state and (default) p
 |**indirect**|Part of a dependency chain, enabled indirectly.|
 
 #### `journalctl`
-It is a system journal, keeping everything well documented. Since it's keeping everything, running `journalctl` by itself will yield tens of thousands of lines, especially if the PC is regularly used.
+It is a system journal, keeping everything well documented. Since it's keeping everything, running `journalctl` by itself will yield tens of thousands of lines, especially if the PC is regularly used. We can limit & customize which output we want to see with the options below:
 
+|**Option**|**Example**|**Use Case**|
+|---|---|---|
+|_(none)_|`journalctl`|Show all logs (oldest first)|
+|`-r`|`journalctl -r`|Newest logs first (reverse order)|
+|`-n N`|`journalctl -n 50`|Show last N lines|
+|`-f`|`journalctl -f`|Follow logs in real-time (like `tail -f`)|
+|`-n N -f`|`journalctl -n 20 -f`|Show last 20 lines + follow|
+|`-u`|`journalctl -u sshd.service`|Show logs for a specific service/unit|
+|`-u + -p`|`journalctl -u nginx.service -p err`|Service logs with only **errors**|
+|`--since`|`journalctl --since yesterday`|Logs since a given time|
+|`--until`|`journalctl --since today --until "12:00"`|Logs between two times|
+|`-k`|`journalctl -k`|Kernel logs (like `dmesg`)|
+|`-b`|`journalctl -b`|Logs from current boot only|
+|`-b -1`|`journalctl -b -1`|Logs from previous boot|
 
+✅ **Memory trick**:
 
+- `-u` = unit/service
+- `-f` = follow live
+- `-n` = number of lines
+- `-r` = reverse order
+- `-k` = kernel
+- `-b` = boot
 
 ### SysVinit
+Since I personally use AntiX, I have experienced using a system with `sysvinit` (though I have never fiddled with its settings as much as systems with `systemd`).
 
+As mentioned earlier, `sysvinit` uses scripts, instead of a single, monolithic system. 
+
+However, some systems like 
