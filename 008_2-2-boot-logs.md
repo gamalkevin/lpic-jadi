@@ -144,5 +144,3 @@ It is a system journal, keeping everything well documented. Since it's keeping e
 Since I personally use AntiX, I have experienced using a system with `sysvinit` (though I have never fiddled with its settings as much as systems with `systemd`).
 
 As mentioned earlier, `sysvinit` uses scripts, instead of a single, monolithic system. 
-
-However, some systems like 
