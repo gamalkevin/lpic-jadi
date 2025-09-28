@@ -51,4 +51,5 @@ Likewise, isolating into `rescue` will get you into the `rescue.target`. Unlike 
 An even less 'alive' condition is the `emergency.target`:
 - Running `systemctl is-system-running` while in `rescue` and `emergency` modes will yield `maintenance`.
 
-
+**Funny note:**
+Trying to isolate into `rescue` sent my Fedora VM into a coma. After force stopping and restarting, it just froze during 'Booting Linux' phase.  
