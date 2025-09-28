@@ -33,5 +33,12 @@ After=basic.target rescue.service rescue.target
 AllowIsolate=yes
 ```
 
-## Systemctl
+## Systemctl Isolate
+Doing `cat` to a target like the one above, we can notice the part where it says `AllowIsolate=yes`.
 
+According to the `man` [page](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html#isolate%20UNIT): 
+> **isolate _`UNIT`_**
+> 
+> Start the unit specified on the command line and its dependencies and stop all others, unless they have `IgnoreOnIsolate=yes`
+
+So if we were to execute `systemctl isolate multi-user.target`, wget out of `graphical.target`
