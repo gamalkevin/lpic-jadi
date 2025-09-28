@@ -46,4 +46,9 @@ So if we were to execute `systemctl isolate multi-user`, it will get us out of `
 `multi-user.target` doesn't have GUI, so it will bring us to the command-line interface/CLI of the system. See below:
 ![isolate multi-user](./Files/009_isolate-multi-user.gif)
 
-Personally,
+Likewise, isolating into `rescue` will get you into the `rescue.target`. Unlike multi-user, root password is not required in rescue mode. Physical access is enough.
+
+An even less 'alive' condition is the `emergency.target`:
+- Running `systemctl is-system-running` while in `rescue` and `emergency` modes will yield `maintenance`.
+
+
