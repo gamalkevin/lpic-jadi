@@ -5,4 +5,8 @@ I accidentally learned about runlevels when reading about **SysVinit vs Systemd*
 
 However, Jadi put an interesting way to describe runlevels: We think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.
 
-## 
+## System Target
+Targets are a combination of services. As previously said, `systemd` can handle super complicated task, like:
+- Making services inside targets dependent to each other;
+- Making a particular service starts **only after** another particular service; 
+- *et cetera*.
