@@ -3,5 +3,6 @@
   "showLineNumber": true,
   "trashOption": "system",
   "strictLineBreaks": true,
-  "showInlineTitle": false
+  "showInlineTitle": false,
+  "alwaysUpdateLinks": true
 }
