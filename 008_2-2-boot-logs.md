@@ -113,6 +113,10 @@ When running `systemctl list-unit-files`, it will show the state and (default) p
 |**generated**|Auto-generated unit (usually by some script or by systemd itself).|
 |**indirect**|Part of a dependency chain, enabled indirectly.|
 
+#### `journalctl`
+It is a system journal, keeping everything well documented. Since it's keeping everything, running `journalctl` by itself will yield tens of thousands of lines, especially if the PC is regularly used.
+
+
 
 
 ### SysVinit
