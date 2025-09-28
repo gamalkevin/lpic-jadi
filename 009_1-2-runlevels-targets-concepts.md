@@ -7,6 +7,29 @@ However, Jadi put an interesting way to describe runlevels: We think of it like 
 
 ## System Target
 Targets are a combination of services. As previously said, `systemd` can handle super complicated task, like:
-- Making services inside targets dependent to each other;
-- Making a particular service starts **only after** another particular service; 
+- Making targets dependent to each other;
+- Making a particular target starts **only after** another; 
 - *et cetera*.
+
+As I said before, since I am already using Linux (Manjaro) as a daily driver, I already know how package details are written in Pacman. So viewing targets using `systemctl` yields a familiar description:
+```
+# systemctl cat multi-user.target
+# /usr/lib/systemd/system/multi-user.target
+#  SPDX-License-Identifier: LGPL-2.1-or-later
+#
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify>
+#  under the terms of the GNU Lesser General Public License as pub>
+#  the Free Software Foundation; either version 2.1 of the License>
+#  (at your option) any later version.
+
+[Unit]
+Description=Multi-User System
+Documentation=man:systemd.special(7)
+Requires=basic.target
+Conflicts=rescue.service rescue.target
+After=basic.target rescue.service rescue.target
+AllowIsolate=yes
+```
+
