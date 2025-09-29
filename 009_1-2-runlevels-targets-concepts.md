@@ -5,7 +5,7 @@ I accidentally learned about runlevels when reading about **SysVinit vs Systemd*
 
 However, Jadi put an interesting way to describe runlevels: Try to think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.
 
-## System Target
+## System Target 🎯
 Targets are a combination of services. As previously said, `systemd` can handle super complicated task, like:
 - Making targets dependent to each other;
 - Making a particular target starts **only after** another; 
@@ -33,7 +33,7 @@ After=basic.target rescue.service rescue.target
 AllowIsolate=yes
 ```
 
-## Systemctl Isolate
+## Systemctl Isolate 🏥
 Doing `cat` to a target like the one above, we can notice the part where it says `AllowIsolate=yes`.
 
 According to the `man` [page](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html#isolate%20UNIT): 
@@ -60,10 +60,10 @@ Turns out, On many modern Linux distros (including Ubuntu, Manjaro, Fedora), the
 
 To get into recovery/rescue mode, we can do so by choosing the appropriate kernel through GRUB.
 
-## Runlevel Compatibility in Ubuntu
+## Runlevel Compatibility in Ubuntu 💾
 As Jadi has shown, Ubuntu (and apparently its derivatives) still maintain backwards compatibility for `runlevel`.  I tested with Xubuntu and confirmed that it's working.
 
-### `/etc/init.d/`
+### 📂 `/etc/init.d/` 
 This directory contains old-style init (SysVinit) scripts. 
 - Each file inside (`/etc/init.d/ssh`, `/etc/init.d/networking`, etc.) is a **shell script** that can:
     - Start a service  
@@ -76,13 +76,14 @@ Example (old way):
 sudo /etc/init.d/ssh start 
 sudo /etc/init.d/ssh stop
 ```
-#### 🚂 What happens when running services the old way
+
+**So what happens when running services the old way?**
 - When running something like:  
     `sudo service ssh start`
     → `systemd` actually **redirects the command** to the proper systemd unit (`sshd.service`).
 - If there’s no systemd unit, `systemd` can still **execute the old SysV script** from `/etc/init.d/`.
 
-### `/etc/rcN.d` 
+### 📂 `/etc/rcN.d` 
 The `N` after `rc` corresponds to a `runlevel`:
 
 |Runlevel|Meaning|
@@ -96,7 +97,7 @@ The `N` after `rc` corresponds to a `runlevel`:
 |`6`|Reboot|
 > In **Debian/Ubuntu**, `2`, `3`, `4`, `5` are usually the same (multi-user with networking).
 
-#### 📂 Directory structure
+#### Directory structure 🌳
 - Example: `/etc/rc2.d/`
     - Contains **symlinks** to scripts in `/etc/init.d/`
     - Names follow a convention:
@@ -113,7 +114,7 @@ Here:
 - `S01dbus` starts the **D-Bus** service very early in runlevel 2.
 - `K01bluetooth` stops **Bluetooth** when leaving this runlevel.
 
-#### ⚡ How it worked
+#### How it worked ⚡
 - When changing runlevels (`init 3`, `init 5`, etc.), the system:
     1. Executed all `K` scripts in the target directory (to stop unneeded services).
         
@@ -122,7 +123,7 @@ Here:
     3. Order was defined by the number (e.g., `S01` runs before `S20`).
         
 
-### 🛠 On modern Ubuntu (systemd era)
+### On modern Ubuntu / `systemd` era  🛠
 - `/etc/rcN.d/` still exists for **compatibility**.
 - Under the hood, `systemd` translates these SysV scripts into native service units.
 - Instead of `init` + runlevels, Ubuntu now uses **targets**:
