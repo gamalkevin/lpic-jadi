@@ -3,7 +3,7 @@ Continuing with **LPIC Topic 101.3: Change runlevels / boot targets and shutdown
 
 I accidentally learned about runlevels when reading about **SysVinit vs Systemd** back in video **008**. I even compiled a [cheat-sheet](./References/init-systems.md#systemd-vs-sysvinit-cheat-sheet) in the References folder to differentiate the two, followed by side-by-side [comparison](./References/init-systems.md#notes-on-runlevelstargets) of runlevels and its systemd target equivalent. So I already have some degree of understanding regarding the concept.
 
-However, Jadi put an interesting way to describe runlevels: We think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.
+However, Jadi put an interesting way to describe runlevels: Try to think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.
 
 ## System Target
 Targets are a combination of services. As previously said, `systemd` can handle super complicated task, like:
@@ -51,5 +51,7 @@ Likewise, isolating into `rescue` will get you into the `rescue.target`. Unlike 
 An even less 'alive' condition is the `emergency.target`:
 - Running `systemctl is-system-running` while in `rescue` and `emergency` modes will yield `maintenance`.
 
+
+
 **Funny note:**
-Trying to isolate into `rescue` sent my Fedora VM into a coma. After force stopping and restarting, it just froze during 'Booting Linux' phase.  
+Trying to isolate into `rescue` sent my Fedora VM into a coma. I had to mash `alt + F2` manually to go into the  console.
