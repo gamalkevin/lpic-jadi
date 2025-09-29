@@ -45,3 +45,4 @@ Anyways, I got it up and running successfully. Here's the details:
 - 8192 MiB / 8 GiB RAM
 - 25 GiB VirtIO Disk 1:
 	- `/var/lib/libvirt/images/slackware15.0.qcow2`
+

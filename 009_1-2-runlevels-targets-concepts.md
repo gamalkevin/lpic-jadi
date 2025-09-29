@@ -59,3 +59,4 @@ Trying to isolate into `rescue` seemingly sent my Fedora VM into a coma. I had t
 Turns out, On many modern Linux distros (including Ubuntu, Manjaro, Fedora), the root account is disabled for security reasons, and users are expected to use **normal user + sudo** instead.
 
 To get into recovery/rescue mode, we can do so by choosing the appropriate kernel through GRUB.
+
