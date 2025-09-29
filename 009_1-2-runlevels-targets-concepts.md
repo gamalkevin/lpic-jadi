@@ -76,9 +76,58 @@ Example (old way):
 sudo /etc/init.d/ssh start 
 sudo /etc/init.d/ssh stop
 ```
-#### What happens when running services the old way
+#### 🚂 What happens when running services the old way
 - When running something like:  
     `sudo service ssh start`
     → `systemd` actually **redirects the command** to the proper systemd unit (`sshd.service`).
 - If there’s no systemd unit, `systemd` can still **execute the old SysV script** from `/etc/init.d/`.
 
+### `/etc/rcN.d` 
+The `N` after `rc` corresponds to a `runlevel`:
+
+|Runlevel|Meaning|
+|---|---|
+|`0`|Halt (shutdown)|
+|`1`|Single-user mode (rescue/maintenance)|
+|`2`|Multi-user mode (without networking, on some distros)|
+|`3`|Multi-user mode with networking (text-only)|
+|`4`|Undefined/custom (rarely used)|
+|`5`|Multi-user mode with networking + graphical login|
+|`6`|Reboot|
+> In **Debian/Ubuntu**, `2`, `3`, `4`, `5` are usually the same (multi-user with networking).
+
+#### 📂 Directory structure
+- Example: `/etc/rc2.d/`
+    - Contains **symlinks** to scripts in `/etc/init.d/`
+    - Names follow a convention:
+        - `SNNname` → Start script at sequence number `NN`
+        - `KNNname` → Kill (stop) script at sequence number `NN`
+For example:
+```
+/etc/rc2.d/
+ ├── S01dbus -> ../init.d/dbus
+ ├── S02networking -> ../init.d/networking
+ ├── K01bluetooth -> ../init.d/bluetooth
+```
+Here:
+- `S01dbus` starts the **D-Bus** service very early in runlevel 2.
+- `K01bluetooth` stops **Bluetooth** when leaving this runlevel.
+
+#### ⚡ How it worked
+- When changing runlevels (`init 3`, `init 5`, etc.), the system:
+    1. Executed all `K` scripts in the target directory (to stop unneeded services).
+        
+    2. Executed all `S` scripts in the target directory (to start required services).
+        
+    3. Order was defined by the number (e.g., `S01` runs before `S20`).
+        
+
+### 🛠 On modern Ubuntu (systemd era)
+- `/etc/rcN.d/` still exists for **compatibility**.
+- Under the hood, `systemd` translates these SysV scripts into native service units.
+- Instead of `init` + runlevels, Ubuntu now uses **targets**:
+    - `graphical.target` ≈ runlevel 5
+    - `multi-user.target` ≈ runlevel 3
+    - `rescue.target` ≈ runlevel 1
+    - `poweroff.target` ≈ runlevel 0
+    - `reboot.target` ≈ runlevel 6
