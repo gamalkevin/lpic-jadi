@@ -63,3 +63,22 @@ To get into recovery/rescue mode, we can do so by choosing the appropriate kerne
 ## Runlevel Compatibility in Ubuntu
 As Jadi has shown, Ubuntu (and apparently its derivatives) still maintain backwards compatibility for `runlevel`.  I tested with Xubuntu and confirmed that it's working.
 
+### `/etc/init.d/`
+This directory contains old-style init (SysVinit) scripts. 
+- Each file inside (`/etc/init.d/ssh`, `/etc/init.d/networking`, etc.) is a **shell script** that can:
+    - Start a service  
+    - Stop a service
+    - Restart a service
+    - Check its status
+
+Example (old way): 
+```
+sudo /etc/init.d/ssh start 
+sudo /etc/init.d/ssh stop
+```
+#### What happens when running services the old way
+- When running something like:  
+    `sudo service ssh start`
+    → `systemd` actually **redirects the command** to the proper systemd unit (`sshd.service`).
+- If there’s no systemd unit, `systemd` can still **execute the old SysV script** from `/etc/init.d/`.
+
