@@ -51,7 +51,11 @@ Likewise, isolating into `rescue` will get you into the `rescue.target`. Unlike 
 An even less 'alive' condition is the `emergency.target`:
 - Running `systemctl is-system-running` while in `rescue` and `emergency` modes will yield `maintenance`.
 
+**Note:**
+Trying to isolate into `rescue` seemingly sent my Fedora VM into a coma. I had to mash `alt + F2` to manually get into the  console. However, it brought an error:
+![Failed Isolate Rescue](009_isolate-rescue.gif)
+*`Cannot open access to console, the root account is locked`*
 
+Turns out, On many modern Linux distros (including Ubuntu, Manjaro, Fedora), the root account is disabled for security reasons, and users are expected to use **normal user + sudo** instead.
 
-**Funny note:**
-Trying to isolate into `rescue` sent my Fedora VM into a coma. I had to mash `alt + F2` manually to go into the  console.
+To get into recovery/rescue mode, we can do so by choosing the appropriate kernel through GRUB.
