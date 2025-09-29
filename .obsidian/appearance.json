@@ -3,5 +3,7 @@
   "cssTheme": "Primary",
   "showRibbon": false,
   "showViewHeader": false,
-  "accentColor": "#a560be"
+  "accentColor": "",
+  "interfaceFontFamily": "FiraCode",
+  "theme": "system"
 }
