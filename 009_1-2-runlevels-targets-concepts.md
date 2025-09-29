@@ -60,3 +60,6 @@ Turns out, On many modern Linux distros (including Ubuntu, Manjaro, Fedora), the
 
 To get into recovery/rescue mode, we can do so by choosing the appropriate kernel through GRUB.
 
+## Runlevel Compatibility in Ubuntu
+As Jadi has shown, Ubuntu (and apparently its derivatives) still maintain backwards compatibility for `runlevel`.  I tested with Xubuntu and confirmed that it's working.
+
