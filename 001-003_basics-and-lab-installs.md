@@ -8,6 +8,10 @@ I'm using [QEMU-KVM](https://tinypilotkvm.com/blogs/insights/kvm-vs-qemu) for al
 
 [^1]: [QEMU vs VirtualBox vs VMWare](https://www.diskinternals.com/vmfs-recovery/qemu-vs-virtualbox-vs-vmware/)
 
+---
+
+It seems like I can't decide which platform I want to have as labs, since I
+
 ## Initial Labs; deleted 🚮
 ```
 ## Lab 1 - Fedora 🎩
