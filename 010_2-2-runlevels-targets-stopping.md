@@ -44,7 +44,7 @@ These are more consistent because everything goes through `systemd`.
 ## Delayed shutdown with `systemd`
 As you might have noticed above, systemd doesn't seem to have the same delayed shutdown the way SysVinit does. 
 
-However, `systemd` ships a **compatibility wrapper**: 
+However, `systemd` ships a **compatibility wrapper** / symbolic links: 
 - It will recognize classic `shutdown` command with its options, 
 - e.g.: `shutdown -h +10` (Shutdown in 10 minutes). 
 - It is run under `systemd` instead of `init`.
