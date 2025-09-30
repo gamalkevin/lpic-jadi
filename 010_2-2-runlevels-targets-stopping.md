@@ -59,3 +59,23 @@ systemctl reboot --when="17:30"
 → `--when` lets user specify relative or absolute times. 
 
 *This feature was added in newer systemd versions, so on some older distros you might not see it.*
+
+## Notifying users 📣
+101.3 isn’t just about the mechanics of `shutdown` and `reboot`, but also about:
+- **Notifying users** before a shutdown/reboot.
+- **Managing logins** (so new users don’t get surprised or lose work).
+- Understanding the **tools to communicate with users** on a multi-user system.
+
+So these tools Jadi mentioned are useful to notify users of what admins going to do with the system:
+- **`wall` (write all)**  
+    Sends a broadcast message to all logged-in users.
+    `echo "System will reboot in 5 minutes" | wall`
+    → Everyone sees it on their terminal.
+- **`mesg`**  
+    Controls whether other users can send messages to your terminal.
+    - `mesg n` → deny messages.
+    - `mesg y` → allow messages.  
+        → Affects tools like `write` or `wall`.
+- **`notd`**  
+    This is less common, but on some systems it’s a notification daemon (like desktop pop-ups).  
+    LPIC mostly focuses on **text-based TTY notifications** (`wall`, `mesg`, `write`).
