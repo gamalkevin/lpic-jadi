@@ -10,10 +10,9 @@ I'm using [QEMU-KVM](https://tinypilotkvm.com/blogs/insights/kvm-vs-qemu) for al
 
 ---
 
-It seems like I can't decide which platform I want to have as labs, since I
+It seems like I can't decide which platform I want to have as labs, since I keep deleting and having new ones. Anyways, here's the history.
 
-## Initial Labs; deleted 🚮
-```
+## Initial Labs; deleted, but restored. 🚮 😵
 ## Lab 1 - Fedora 🎩
 Specifications: 
 - **Fedora 42:** [ISO](https://download.fedoraproject.org/pub/fedora/linux/releases/42/Workstation/x86_64/iso/Fedora-Workstation-Live-42-1.1.x86_64.iso)
@@ -25,15 +24,16 @@ Specifications:
 
 ## Lab 2 - Ubuntu 🐦‍⬛
 Specifications:
-- **Ubuntu 25.04:** [ISO](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
+- **Ubuntu 24.04:** [ISO](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true)
 - Gnome DE *(default)*
 -  4 vCPU
 - 8000 MiB RAM
--  25 GiB VirtIO Disk 1:
-	- `/var/lib/libvirt/images/ubuntu25.04.qcow2`
-```
+-  30 GiB VirtIO Disk 1:
+	- `/var/lib/libvirt/images/ubuntu24.04.Fresh Install`
+Initially, I used Ubuntu 25.04, but because I deleted it and later realized I need it again, I reinstalled. However, as you can see it's now 24.04. The `.Fresh Install` is the snapshot after fresh install. Aptly named.
 
-## Current Lab - Slackware 🫟
+
+## Another deleted lab - Slackware 🫟
 After a while, I realized both labs above to be redundant since I am already running Manjaro. So I decided to delete both. 
 
 However, I discovered later on ([video 009](./009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with **SysVinit**. 
@@ -50,3 +50,4 @@ Anyways, I got it up and running successfully. Here's the details:
 - 25 GiB VirtIO Disk 1:
 	- `/var/lib/libvirt/images/slackware15.0.qcow2`
 
+Well, somehow it's bricked after some use. I can't get past LILO to boot the Slack system again. So I end up deleting it.
