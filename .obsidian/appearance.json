@@ -4,7 +4,7 @@
   "showRibbon": false,
   "showViewHeader": false,
   "accentColor": "",
-  "interfaceFontFamily": "",
+  "interfaceFontFamily": "FiraCode",
   "theme": "system",
   "textFontFamily": "",
   "monospaceFontFamily": "FiraCode"
