@@ -46,16 +46,16 @@ As you might have noticed above, systemd doesn't seem to have the same delayed s
 
 However, `systemd` ships a **compatibility wrapper**: 
 - It will recognize classic `shutdown` command with its options, 
-- e: `shutdown -h +10` (Shutdown in 10 minutes). Although it is actually run under `systemd` instead of `init`.
+- e.g.: `shutdown -h +10` (Shutdown in 10 minutes). 
+- It is run under `systemd` instead of `init`.
 
 But does systemd has this ability built-in? The answer is **yes**.
 
-- The modern way:
+- The modern systemd way:
 ```
-systemctl poweroff --when="now +10 minutes" systemctl reboot --when="17:30"
+systemctl poweroff --when="now +10 minutes"
+systemctl reboot --when="17:30"
 ```    
-→ `--when` lets user specify relative or absolute times.      (This feature was added in newer systemd versions, so on some older distros you might not see it.)
+→ `--when` lets user specify relative or absolute times. 
 
-## ✅ So:
-- SysV: `shutdown -h +10` → always available.
-- systemd: `systemctl poweroff --when=...` (new way), OR just use `shutdown` (compatibility).
+*This feature was added in newer systemd versions, so on some older distros you might not see it.*
