@@ -1,6 +1,5 @@
 # 004 - 101.1 - Part 1 of 3 - Determine and Configure Hardware, Concepts 📚️
-
-We're starting with **101.1: Determine and configure hardware settings**
+## 101.1: Determine and configure hardware settings
 
 |**Weight**|**2**|
 |---|---|

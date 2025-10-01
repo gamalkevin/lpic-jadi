@@ -1,5 +1,5 @@
 # 009 - 101.3 - Part 1 of 2 - Runlevels and targets, Concepts and updating 🔄
-Next up, 101.3 Change runlevels / boot targets and shutdown or reboot system
+## 101.3: Change runlevels / boot targets and shutdown or reboot system
 
 |**Weight**|**3**|
 |---|---|
@@ -22,6 +22,8 @@ Next up, 101.3 Change runlevels / boot targets and shutdown or reboot system
 
 **Partial list of files, terms, utilities:**  
 `/etc/inittab`, `shutdown`, `init`, `/etc/init.d/`, `telinit`, `systemd`, `systemctl`, `/etc/systemd/`, `/usr/lib/systemd/`, `wall`
+
+---
 
 I accidentally learned about runlevels when reading about **SysVinit vs Systemd** back in video **008**. I even compiled a [cheat-sheet](./References/init-systems.md#systemd-vs-sysvinit-cheat-sheet) in the References folder to differentiate the two, followed by side-by-side [comparison](./References/init-systems.md#notes-on-runlevelstargets) of runlevels and its systemd target equivalent. So I already have some degree of understanding regarding the concept.
 

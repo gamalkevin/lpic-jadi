@@ -1,6 +1,6 @@
 # 011 - 102.1 - Part 1 of 2 - Design Hard Disk Layout - Filesystem Hierarchy Standard
+## 102.1: Design hard disk layout
 
-## Topic Brief 102.1: Design hard disk layout
 |**Weight**|**2**|
 |---|---|
 |**Description**|Candidates should be able to design a disk partitioning scheme for a Linux system.|

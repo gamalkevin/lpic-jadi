@@ -1,5 +1,5 @@
 # 007 - 101.2 - Part 1 of 2 - The Boot Process; Concepts 📚️
-Continuing with **101.2: Boot the system**
+## 101.2: Boot the system
 
 |**Weight**|**3**|
 |---|---|
@@ -21,8 +21,9 @@ Continuing with **101.2: Boot the system**
 **Partial list of files, terms, utilities:**  
 `dmesg`, `journalctl`, BIOS, UEFI, bootloader, kernel, initramfs, init, SysVinit, systemd
 
+---
 
-## The Boot Process
+## The Boot Process 💹
 We have very little control during the first moments of turning on the computer. Let's understand more what's happening:
 1. Motherboard firmware does a PowerOnSelfTest / **POST**
 	1. It's checking and testing available hardware, which continues the booting process if everything goes well.
