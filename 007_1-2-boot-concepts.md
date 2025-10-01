@@ -1,5 +1,26 @@
 # 007 - 101.2 - Part 1 of 2 - The Boot Process; Concepts 📚️
-Continuing with **LPIC Topic 101.2: Boot the system**.
+Continuing with **101.2: Boot the system**
+
+|**Weight**|**3**|
+|---|---|
+|**Description**|Candidates should be able to guide the system through the booting process.|
+
+**Key Knowledge Areas:**
+
+- Provide common commands to the boot loader and options to the kernel at boot time.
+    
+- Demonstrate knowledge of the boot sequence from BIOS/UEFI to boot completion.
+    
+- Understanding of **SysVinit** and **systemd**.
+    
+- Awareness of **Upstart**.
+    
+- Check boot events in the log files.
+    
+
+**Partial list of files, terms, utilities:**  
+`dmesg`, `journalctl`, BIOS, UEFI, bootloader, kernel, initramfs, init, SysVinit, systemd
+
 
 ## The Boot Process
 We have very little control during the first moments of turning on the computer. Let's understand more what's happening:
