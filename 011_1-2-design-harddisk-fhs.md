@@ -17,5 +17,4 @@
 ---
 
 
-## 
-asd
+## Filesystem Hierarchy Standard / FHS
