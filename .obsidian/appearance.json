@@ -4,8 +4,8 @@
   "showRibbon": false,
   "showViewHeader": false,
   "accentColor": "",
-  "interfaceFontFamily": "FiraCode",
+  "interfaceFontFamily": "Cascadia Code",
   "theme": "system",
   "textFontFamily": "",
-  "monospaceFontFamily": "FiraCode"
+  "monospaceFontFamily": "FiraCode Nerd Font"
 }

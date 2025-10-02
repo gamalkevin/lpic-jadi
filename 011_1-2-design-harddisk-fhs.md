@@ -18,3 +18,23 @@
 
 
 ## Filesystem Hierarchy Standard / FHS
+|Directory|Purpose|
+|---|---|
+|`/` (root)|The **top of everything**. All files and dirs start here.|
+|`/bin`|**Essential binaries** (commands like `ls`, `cp`, `mv`, `cat`). Needed even in single-user mode.|
+|`/sbin`|**System binaries** (like `fsck`, `ifconfig`, `reboot`). Used by root/admin.|
+|`/etc`|**System configuration** files (static text configs). Example: `/etc/passwd`, `/etc/fstab`.|
+|`/dev`|**Device files** (e.g. `/dev/sda`, `/dev/null`). Created by `udev`.|
+|`/proc`|**Virtual filesystem** with kernel & process info. Example: `/proc/cpuinfo`.|
+|`/sys`|**Virtual filesystem** exposing kernel/sysfs info.|
+|`/tmp`|Temporary files (wiped on reboot).|
+|`/var`|Variable data → logs (`/var/log`), spool files, caches.|
+|`/home`|User home directories.|
+|`/root`|Root user’s home directory.|
+|`/boot`|Boot loader files, kernel, initramfs.|
+|`/lib`|Essential shared libraries & kernel modules.|
+|`/usr`|**User programs & data**. Has subdirs like `/usr/bin`, `/usr/lib`.|
+|`/opt`|Optional add-on software (3rd party apps).|
+|`/media`|Mount points for removable media (USBs, DVDs).|
+|`/mnt`|Temporary mount point (admin mounting).|
+|`/srv`|Service data (e.g. web server files in `/srv/www`).|
