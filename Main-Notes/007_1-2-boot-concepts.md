@@ -36,7 +36,7 @@ We have very little control during the first moments of turning on the computer.
 6. System ready to use
 
 ## Boot Process Analogies
-To understand the boot process, I asked ChatGPT to obtain some useful analogies. Access them [here](boot-process-analogies.md).
+To understand the boot process, I asked ChatGPT to obtain some useful analogies. Access them [here](/References/boot-process-analogies.md).
 
 ## Linux vs. GNU/Linux  
 - **Linux** strictly means the **kernel**, the core program that manages hardware and system resources.  
