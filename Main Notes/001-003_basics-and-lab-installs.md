@@ -36,7 +36,7 @@ Initially, I used Ubuntu 25.04, but because I deleted it and later realized I ne
 ## Another deleted lab - Slackware 🫟
 After a while, I realized both labs above to be redundant since I am already running Manjaro. So I decided to delete both. 
 
-However, I discovered later on ([video 009](./009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with **SysVinit**. 
+However, I discovered later on ([video 009](009_1-2-runlevels-targets-concepts.md)) that I needed to have a system with **SysVinit**. 
 
 I already have AntiX and MX Linux with `sysvinit`, but both are installed on a USB drive. Since I don't have a spare laptop to run it side-by-side with my study, I decided to make a KVM/QEMU using MX Linux, though it was ultimately failed (ISO not recognized by `virt-manager`; no time to troubleshoot & need to get it ready quickly).
 

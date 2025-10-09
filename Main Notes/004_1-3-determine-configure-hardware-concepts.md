@@ -63,4 +63,4 @@ PCI has since evolved into PCIe (e stands for express):
 
 ---
 
-First part done, let's head to [part 2 of 3](./005_2-3-determine-configure-hardware-kernel.md) next.
+First part done, let's head to [part 2 of 3](005_2-3-determine-configure-hardware-kernel.md) next.

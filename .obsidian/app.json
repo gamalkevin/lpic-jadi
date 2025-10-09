@@ -6,5 +6,7 @@
   "showInlineTitle": false,
   "alwaysUpdateLinks": true,
   "useMarkdownLinks": true,
-  "attachmentFolderPath": "./Files"
+  "attachmentFolderPath": "./Files",
+  "promptDelete": false,
+  "defaultViewMode": "preview"
 }
