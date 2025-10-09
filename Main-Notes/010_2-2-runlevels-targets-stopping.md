@@ -1,7 +1,7 @@
 # 010 - 101.3 - Part 2 of 2 - Runlevels and targets, Stopping the System and Informing
  Part 2 of **LPIC Topic 101.3: Change runlevels / boot targets and shutdown or reboot system**.
 
-*Find shutdown & reboot commands cheat-sheet [here](shutdown-commands.md).*
+*Find shutdown & reboot commands cheat-sheet [here](./References/shutdown-commands.md).*
 
 ---
 

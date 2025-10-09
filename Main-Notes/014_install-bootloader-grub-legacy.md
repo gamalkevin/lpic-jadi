@@ -43,4 +43,4 @@
 - Rarely used today, but still covered in exams.
 
 ### **GRUB 2 (GRand Unified Bootloader v2)**
-Most widely used boot manager on Linux. More in the [next file](015_install-bootloader-grub-2.md).
+Most widely used boot manager on Linux. More in the [next file](./Main-Notes/015_install-bootloader-grub-2.md).

@@ -122,4 +122,4 @@ Think of it like Linux’s **internal messaging system**.
 
 ---
 
-Now, on to the [last part](006_3-3-determine-configure-hardware-commands.md) on this topic.
+Now, on to the [last part](./Main-Notes/006_3-3-determine-configure-hardware-commands.md) on this topic.

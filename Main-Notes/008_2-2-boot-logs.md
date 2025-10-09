@@ -23,7 +23,7 @@ Some `init` system examples:
 - **runit** a fast, simple init system that can start services in parallel. 
 - **upstart** event-based, initiated by Canonical, the company behind Ubuntu. Started in 2014, discontinued in 2015. 
 
-For more details about init systems, go [here](init-systems.md).
+For more details about init systems, go [here](./References/init-systems.md).
 
 ### Systemd
 The new, flashy guy. Lots of debate regarding its existence. 
@@ -32,7 +32,7 @@ It is monolithic, meaning it behaves more like a corporation with united vision 
 
 It is super complicated (supports hierarchy, timers, etc.), and for many people, that is the very argument against using it.
 
-`systemd` works by having [units](References/init-systems.md#systemd-units). To work with units, we use `systemctl` (systemd control?).
+`systemd` works by having [units](./References/init-systems.md#systemd-units). To work with units, we use `systemctl` (systemd control?).
 
 Here are some must-know `systemctl` commands:
 ```
@@ -42,7 +42,7 @@ systemctl stop sshd         # stop it
 systemctl enable sshd       # start on boot
 systemctl disable sshd      # don’t start on boot
 ```
-A cheat sheet is available [here](init-systems.md#systemctl-cheatsheet).
+A cheat sheet is available [here](./init-systems.md#systemctl-cheatsheet).
 
 Let's try viewing my default mode:
 ```
