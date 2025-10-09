@@ -25,7 +25,7 @@
 
 ---
 
-I accidentally learned about runlevels when reading about **SysVinit vs Systemd** back in video **008**. I even compiled a [cheat-sheet](./References/init-systems.md#systemd-vs-sysvinit-cheat-sheet) in the References folder to differentiate the two, followed by side-by-side [comparison](./References/init-systems.md#notes-on-runlevelstargets) of runlevels and its systemd target equivalent. So I already have some degree of understanding regarding the concept.
+I accidentally learned about runlevels when reading about **SysVinit vs Systemd** back in video **008**. I even compiled a [cheat-sheet](/References/init-systems.md#systemd-vs-sysvinit-cheat-sheet) in the References folder to differentiate the two, followed by side-by-side [comparison](/References/init-systems.md#notes-on-runlevelstargets) of runlevels and its systemd target equivalent. So I already have some degree of understanding regarding the concept.
 
 However, Jadi put an interesting way to describe runlevels: Try to think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.
 
@@ -68,7 +68,7 @@ According to the `man` [page](https://www.freedesktop.org/software/systemd/man/l
 So if we were to execute `systemctl isolate multi-user`, it will get us out of `graphical.target` and into the defined `multi-user.target`. 
 
 `multi-user.target` doesn't have GUI, so it will bring us to the command-line interface/CLI of the system. See below:
-![isolate multi-user](./References/Files/009_isolate-multi-user.gif)
+![isolate multi-user](/References/Files/009_isolate-multi-user.gif)
 
 Likewise, isolating into `rescue` will get you into the `rescue.target`. Unlike multi-user, root password is not required in rescue mode. Physical access is enough.
 
@@ -77,7 +77,7 @@ An even less 'alive' condition is the `emergency.target`:
 
 **Note:**
 Trying to isolate into `rescue` seemingly sent my Fedora VM into a coma. I had to mash `alt + F2` to manually get into the  console. However, it brought an error:
-![Failed Isolate Rescue](./References/Files/009_isolate-rescue.gif)
+![Failed Isolate Rescue](/References/Files/009_isolate-rescue.gif)
 *`Cannot open access to console, the root account is locked`*
 
 Turns out, On many modern Linux distros (including Ubuntu, Manjaro, Fedora), the root account is disabled for security reasons, and users are expected to use **normal user + sudo** instead.
