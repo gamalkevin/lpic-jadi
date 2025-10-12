@@ -1,0 +1,11 @@
+{
+  "baseFontSizeAction": true,
+  "cssTheme": "Primary",
+  "showRibbon": false,
+  "showViewHeader": false,
+  "accentColor": "",
+  "interfaceFontFamily": "Cascadia Code",
+  "theme": "system",
+  "textFontFamily": "",
+  "monospaceFontFamily": "FiraCode Nerd Font"
+}

@@ -22,5 +22,8 @@ Thumbs.db
 .obsidian/graph.json
 .obsidian/backups/
 
-# Other stuff
+# Prevent files from being uploaded
 *.log
+*.bak
+package-lock.json
+
