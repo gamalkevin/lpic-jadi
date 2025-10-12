@@ -1,6 +1,8 @@
 # 🧠 **LPIC-1 (101.1) Practice Questions**
+
 ### Marks
-- 🪙 = Kev's answers
+- 🪙 = Kev's original answers
+- 🟢 = Correct Answer
 
 ## **1. System Hardware**
 
@@ -116,7 +118,7 @@
 
 ---
 
-# Answers Evaluation ✅️
+# Answers Correction ✅️
 I used ChatGPT to evaluate my answers.
 
 ### 🧠 **LPIC-1 101.1 Review — Answers & Explanations**
@@ -160,4 +162,4 @@ I was having a particularly hard time to answer Q14: I don't have `/etc/modules`
 Turns out, it is due to my system being **Manjaro**, which doesn't use it by default anymore. Instead, it relies on: 
 - **`/etc/modules-load.d/*.conf`**
 
-But this slight error is very useful to know, because `/etc/modules` is used on Debian/Ubuntu systems, which might show up on the actual LPIC exams.
+But this slight error is very useful to know, because `/etc/modules` is used on Debian/Ubuntu systems, which might show on the actual LPIC exams.
