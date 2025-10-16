@@ -16,86 +16,139 @@
 
 ---
 
-## Understanding Libraries
-### **📘 Terms & Commands**
-#### 1. **Shared Library Basics**
-- Shared libraries are files that contain code and data that **multiple programs can use simultaneously**, reducing redundancy.
-- Common extensions:
-    - `.so` → shared object (e.g., `libm.so`)
-    - `.so.6` → versioned shared object
-    - `.a` → static archive library (not shared at runtime)
+# Understanding Libraries
+In the early days, programs were written entirely from scratch. Nowadays, the same practice would take developers unreasonably long time to finish their programs, especially given how complex and massive the software development world has become.
 
-Location examples:
-`/lib /usr/lib /usr/local/lib`
+Instead, devs can 'call' **libraries** to serve the basic/underlying features of their program. This will cut **development time**, as well as increasing reliability and predictability. When debugging, Devs can easily pinpoint which part of their program doesn't behave correctly. 
 
-#### 2. **View Linked Libraries**
-Use `ldd` to list shared libraries an executable depends on:
-`ldd /bin/ls`
+## 📦 1. What Are Libraries?
 
-Output example:
-`linux-vdso.so.1 =>  (0x00007fffa2dfe000) libselinux.so.1 => /lib64/libselinux.so.1 (0x00007f38e8c23000) libc.so.6 => /lib64/libc.so.6 (0x00007f38e8860000)`
+A **library** is a collection of precompiled code used by programs.  
+They come in two types:
 
-> ⚠️ **Be careful:** Don’t run `ldd` on untrusted binaries — it executes code internally.
+| Type               | Extension             | Loaded              | Description                                                                   |
+| ------------------ | --------------------- | ------------------- | ----------------------------------------------------------------------------- |
+| **Static library** | `.a`                  | At **compile time** | Code copied into the program binary. Bigger size, but self-contained.         |
+| **Shared library** | `.so` (Shared Object) | At **runtime**      | Code loaded dynamically when program runs. Saves memory, smaller executables. |
+
+👉 Example:
+
+```
+/lib/x86_64-linux-gnu/libc.so.6
+```
+
+This is the **GNU C library** (glibc), used by almost every Linux program.
+
+📝 Note:
+- Static library increases dependability, since everything is baked in a single binary. Kinda like laptops where they don't need separate peripherals. 
+- Shared/dynamic library is externally loaded. Programs cannot run until the library is resolved. 
 
 ---
 
-#### 3. **Library Search Paths**
+## ⚙️ 2. How Dynamic Linking Works
 
-The system looks for libraries in several places:
+When you run a program:
 
-1. **Default paths:** `/lib`, `/usr/lib`
-    
-2. **Configured paths:** `/etc/ld.so.conf` and `/etc/ld.so.conf.d/`
-    
-3. **Environment variable:** `LD_LIBRARY_PATH`
-    
+1. The **executable** lists which shared libraries it depends on.
+2. The **dynamic linker/loader** (`ld-linux.so`) loads them into memory.
+3. The program starts running with those libraries available.
+
+Let's try checking libraries required for `firefox`:
+
+```
+ldd /usr/lib/firefox/firefox
+```
+
+Example output:
+
+```
+linux-vdso.so.1 (0x00007fdbd5691000)
+libstdc++.so.6 => /usr/lib/libstdc++.so.6 (0x00007fdbd5200000)
+libm.so.6 => /usr/lib/libm.so.6 (0x00007fdbd50f2000)
+libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x00007fdbd5574000)
+libc.so.6 => /usr/lib/libc.so.6 (0x00007fdbd4e00000)
+/lib64/ld-linux-x86-64.so.2 => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fdbd5693000)
+```
+
+---
+
+## 🧩 3. Library Search Paths
+
+The system looks for shared libraries in these locations, in order:
+
+1. Directories in **`/etc/ld.so.conf`**
+2. Any `.conf` files inside **`/etc/ld.so.conf.d/`**
+3. Default paths:
+    ```
+    /lib /usr/lib
+    ```
+4. Any paths defined in the **`LD_LIBRARY_PATH`** environment variable (temporary).
+
+---
+
+### 🔍 Example: Add a New Library Path
+
+Suppose you installed a custom library in `/usr/local/lib`.
+
+You can make it permanent:
+```
+echo "/usr/local/lib" | sudo tee /etc/ld.so.conf.d/local.conf
+sudo ldconfig
+```
+
+`ldconfig` updates the **library cache** file:
+```
+/etc/ld.so.cache
+```
+
+This cache speeds up lookup for dynamic linker.
+
+---
+
+## 🧰 4. Key Commands
+
+| Command           | Purpose                                     |
+| ----------------- | ------------------------------------------- |
+| `ldd <binary>`    | Show which shared libraries a program needs |
+| `ldconfig`        | Update the library cache and symbolic links |
+| `ldconfig -p`     | Show all known libraries from cache         |
+| `ldconfig -v`     | Verbose mode — see what it’s doing          |
+| `LD_LIBRARY_PATH` | Temporary override of library search path   |
+
+---
+
+### Example:
+
+```
+export LD_LIBRARY_PATH=/opt/mylibs ./myprogram
+```
+
+This tells the system to also look for `.so` files inside `/opt/mylibs` **just for that session**.
+
+---
+
+## 🧪 5. Symbolic Links and Versions
+
+Libraries are versioned to allow compatibility.
 
 Example:
+```
+/lib/libm.so.6 -> libm-2.31.so
+```
 
-`export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH`
-
----
-
-#### 4. **Update the Cache**
-
-After installing new libraries manually:
-
-`sudo ldconfig`
-
-This command updates the cache file `/etc/ld.so.cache`.
-
-To see current entries:
-
-`ldconfig -p | less`
+The symbolic link points to the actual library version.  
+`ldconfig` helps maintain these links automatically.
 
 ---
 
-#### 5. **Check Shared Library Dependencies of Running Process**
+## 🧠 **In Short**
 
-You can use:
-
-`cat /proc/<PID>/maps`
-
-or
-
-`lsof -p <PID> | grep '\.so'`
-
----
-
-#### 6. **Static vs Dynamic Linking**
-
-|Type|Description|File Example|
-|---|---|---|
-|Static|Code is copied into each executable. Bigger size.|`.a`|
-|Dynamic (Shared)|Linked at runtime, smaller executables.|`.so`|
-
----
-
-### **🧩 Files & Directories**
-
-|Path|Purpose|
-|---|---|
-|`/lib`, `/usr/lib`, `/usr/local/lib`|Default library directories|
-|`/etc/ld.so.conf`|Main config file for library paths|
-|`/etc/ld.so.conf.d/`|Directory for additional configs|
-|`/etc/ld.so.cache`|Cache built by `ldconfig`|
+| Concept                 | Description                            |
+| ----------------------- | -------------------------------------- |
+| **Static (.a)**         | Linked at compile time                 |
+| **Shared (.so)**        | Linked at runtime                      |
+| **ldd**                 | Lists dependencies                     |
+| **ldconfig**            | Updates cache and symlinks             |
+| **/etc/ld.so.conf(.d)** | Defines system-wide library paths      |
+| **LD_LIBRARY_PATH**     | Temporary per-session path override    |
+| **/etc/ld.so.cache**    | Compiled list of available shared libs |

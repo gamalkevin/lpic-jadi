@@ -20,6 +20,8 @@ Options for showing special characters:
 - `-t`: Equivalent to `-vT`. Displays non-printing characters and tabs as `^I`.
 - `-A`, `--show-all`: Equivalent to `-vET`. Displays all non-printing characters, line endings, and tabs. 
 
+---
+
 ## 🪙 `grep`
 One of the most useful tool to search text.
 
@@ -57,6 +59,8 @@ File and directory search
 - **`-H`**, `--with-filename`: Always print the file name for each match.
 - **`-I`**: Process a binary file as if it did not contain matching data.
 
+---
+
 ## 🪙 Piping `dmesg` with `grep`
 ```
 $ sudo dmesg | grep -i 'amd'
@@ -66,4 +70,28 @@ While learning about `dmesg` with Jadi, I tested running the command to see what
 Turns out, it brought a long wall of text—duh—making it quite hard to read. 
 
 Suddenly it came up to me to chain the command with `grep`, a tool commonly used for scouring logs. Sure enough, the output was nicely filtered, having only specified to list  `amd`. It even colorized the keyword!
+
+---
+
+## 🪙 `file`
+
+Very useful to see what type of files is being accessed. 
+
+### Case example
+I'm looking for a text file to edit, but since the file has no visible file extensions like `.txt` or `.sh`, it is useful to look what type of file it is beforehand:
+```
+file /etc/default/grub
+
+/etc/default/grub: ASCII text
+```
+
+
+Another example, I want to make sure that I'm looking for a binary executable:
+```
+file /usr/lib/firefox/firefox
+
+firefox: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 4.4.0, BuildID[sha1]=2400217cbd14b7b71a44599075a3170d4cefdaad, stripped
+```
+
+---
 

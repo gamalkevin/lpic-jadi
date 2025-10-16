@@ -5,4 +5,4 @@ That's where [Jadi](https://www.youtube.com/c/geekingjadi), a veteran programmer
 
 *My lazy ass* kept procrastinating the learning process. As of writing this, I've already spent half a month of no progress. I'm just getting started now, hah! *Well, better late than never!*
 
-Prior I have already watched video 001 through 003, which covers the basics and installation of two labs (Fedora and Ubuntu), so I'll skip the notes of both, since I already know how to do it without watching the video. However, see the next file for the documentation of labs that I prepared.
+Before this, I have already watched video 001 through 003, which covers the basics and installation of two labs (Fedora and Ubuntu), so I'll skip the notes of both, since I already know how to do it without watching the video. However, see the next file for the documentation of labs that I prepared.
