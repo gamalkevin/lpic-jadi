@@ -49,3 +49,10 @@ Kinda like `--noconfirm` with Pacman.
 
 
 
+## Zypper
+On OpenSUSE system, Zypper will download `.rpm` files to the specified folders. 
+
+For example:
+```
+/var/cache/zypp/packages/download.opensuse.org-oss/x86_64
+```
