@@ -57,4 +57,4 @@ For example:
 /var/cache/zypp/packages/download.opensuse.org-oss/x86_64
 ```
 
-More `zypper` commands can be found on the cheatsheet.
+More `zypper` commands can be found on the [cheatsheet](/References/yum-zypper-cheatsheet.md#-comparison-zypper-vs-dnf--yum).
