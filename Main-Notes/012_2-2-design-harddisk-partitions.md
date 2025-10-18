@@ -5,7 +5,7 @@ Continuing with **Partitions**.
 
 So instead of writing notes for this video, I'll summarize my knowledge here.
 
-Also, I made a partitioning cheatsheet [here](References/partition-cheat-sheet.md).
+Also, I made a partitioning cheatsheet [here](/References/partition-cheat-sheet.md).
 
 ---
 

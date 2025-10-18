@@ -60,3 +60,41 @@
 - Understand `/etc/yum.conf` and `/etc/yum.repos.d/*.repo` structure.
 - Be aware that **DNF = next-gen YUM** (exam mentions “awareness of DNF”).
 - Memorize the **RPM query and verify flags** (`-q`, `-qa`, `-ql`, `-qi`, `-qf`, `-V`, `-qR`).
+
+---
+
+## 🧩 Comparison: `zypper` vs `dnf` / `yum`
+
+| **Action**                          | **`dnf / yum`**                                | **`zypper`**                         | **Notes**                             |
+| ----------------------------------- | ---------------------------------------------- | ------------------------------------ | ------------------------------------- |
+| **Update repo metadata**            | `dnf check-update`                             | `zypper refresh`                     | Both update repository cache.         |
+| **Upgrade all packages**            | `dnf upgrade` / `yum update`                   | `zypper update`                      | Functionally the same.                |
+| **Install package**                 | `dnf install pkg`                              | `zypper install pkg`                 | Same purpose, similar syntax.         |
+| **Remove package**                  | `dnf remove pkg`                               | `zypper remove pkg`                  | Same purpose.                         |
+| **Reinstall package**               | `dnf reinstall pkg`                            | `zypper install --force pkg`         | Slight difference in syntax.          |
+| **Search for package**              | `dnf search name`                              | `zypper search name`                 | Identical purpose.                    |
+| **Get info about package**          | `dnf info pkg`                                 | `zypper info pkg`                    | Identical purpose.                    |
+| **List installed packages**         | `dnf list installed`                           | `zypper se --installed-only`         | Zypper’s `search` with a flag.        |
+| **Show dependencies**               | `dnf repoquery --requires pkg`                 | `zypper info --requires pkg`         | Zypper shows dependencies via `info`. |
+| **Check which pkg provides a file** | `dnf provides /path/to/file`                   | `zypper what-provides /path/to/file` | Both locate file ownership.           |
+| **Download without installing**     | `dnf download pkg` _(from `dnf-plugins-core`)_ | `zypper download pkg`                | Similar, but native to `zypper`.      |
+| **Clean cache**                     | `dnf clean all`                                | `zypper clean --all`                 | Same goal.                            |
+| **Automatic dependency cleanup**    | `dnf autoremove`                               | `zypper remove --clean-deps pkg`     | Zypper handles deps per remove.       |
+| **Repository management**           | `dnf repolist` / `dnf config-manager`          | `zypper repos` / `zypper addrepo`    | Slightly different commands.          |
+
+---
+
+### 🧠 Quick Concept Note
+
+- `zypper` is **native to openSUSE / SUSE Enterprise**, built on **libzypp**.
+- `dnf` (and older `yum`) are **Red Hat family tools**, built on **libdnf / libsolv**.
+- Both can handle dependency resolution, GPG verification, and repository management — they just differ in CLI flavor.
+
+---
+
+### ✅ Takeaway
+You can think of them as **different front-ends** for the same type of task:
+- `dnf`/`yum` = **Red Hat world (RHEL, Fedora, Rocky, Alma)**
+- `zypper` = **SUSE world (openSUSE, SLES)**
+
+So yes — **same jobs, slightly different language.**
