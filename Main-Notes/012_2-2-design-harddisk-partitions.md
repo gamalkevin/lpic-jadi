@@ -1,4 +1,4 @@
-# 011 - 102.1 - Part 2 of 2 - Design Hard Disk Layout - Partitions
+# Part 2 of 2: Design Hard Disk Layout - Partitions
 Continuing with **Partitions**.
 
 **Note**: I've been using Linux for years now. I have installed multiple distros throughout the years, and most of them using **manual partitioning** option. It is fair to say that I am already quite experienced in this particular topic. 

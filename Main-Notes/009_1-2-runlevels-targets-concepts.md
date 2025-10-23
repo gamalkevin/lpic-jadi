@@ -1,30 +1,11 @@
-# 009 - 101.3 - Part 1 of 2 - Runlevels and targets, Concepts and updating 🔄
+# Part 1 of 2: Runlevels and targets, Concepts and updating 🔄
 ## 101.3: Change runlevels / boot targets and shutdown or reboot system
 
-|**Weight**|**3**|
-|---|---|
-|**Description**|Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This includes changing to single user mode, shutdown/reboot, alerting users, and properly terminating processes. Also includes setting the default runlevel/boot target. Awareness of Upstart as an alternative.|
-
-**Key Knowledge Areas:**
-
-- Set the default runlevel or boot target.
-    
-- Change between runlevels / boot targets including single user mode.
-    
-- Shutdown and reboot from the command line.
-    
-- Alert users before switching runlevels / boot targets or other major system events.
-    
-- Properly terminate processes.
-    
-- Awareness of `acpid`.
-    
-
-**Partial list of files, terms, utilities:**  
-`/etc/inittab`, `shutdown`, `init`, `/etc/init.d/`, `telinit`, `systemd`, `systemctl`, `/etc/systemd/`, `/usr/lib/systemd/`, `wall`
-
----
-
+| **Weight**                                   | **3**                                                                                                                                                                                                                                                                                                                      |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description**                              | Candidates should be able to manage the SysVinit runlevel or systemd boot target of the system. This includes changing to single user mode, shutdown/reboot, alerting users, and properly terminating processes. Also includes setting the default runlevel/boot target. Awareness of Upstart as an alternative.           |
+| **Key Knowledge Areas:**                     | - Set the default runlevel or boot target.<br>- Change between runlevels / boot targets including single user mode.<br>- Shutdown and reboot from the command line.<br>- Alert users before switching runlevels / boot targets or other major system events.<br>- Properly terminate processes.<br>- Awareness of `acpid`. |
+| **Partial list of files, terms, utilities:** | `/etc/inittab`, `shutdown`, `init`, `/etc/init.d/`, `telinit`, `systemd`, `systemctl`, `/etc/systemd/`, `/usr/lib/systemd/`, `wall`                                                                                                                                                                                        |
 I accidentally learned about runlevels when reading about **SysVinit vs Systemd** back in video **008**. I even compiled a [cheat-sheet](/References/init-systems.md#systemd-vs-sysvinit-cheat-sheet) in the References folder to differentiate the two, followed by side-by-side [comparison](/References/init-systems.md#notes-on-runlevelstargets) of runlevels and its systemd target equivalent. So I already have some degree of understanding regarding the concept.
 
 However, Jadi put an interesting way to describe runlevels: Try to think of it like human consciousness. At the first levels, it's like the early infancy phase, even go as far as antenatal. Then after that, comes life with its stages: childhood, adulthood, and end up in old age, where things are 'less alive'.

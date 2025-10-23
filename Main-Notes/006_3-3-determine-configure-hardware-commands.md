@@ -1,4 +1,4 @@
-# 006 - 101.1 - Part 3 of 3 - Determine and Configure Hardware, Commands 📣
+# Part 3 of 3: Determine and Configure Hardware, Commands 📣
 After learning about hardware, let's take a look into the 'basic' commands that touch them.
 
 ## **lsusb, lspci, lsblk, lshw**

@@ -1,4 +1,4 @@
-# 008 - 101.2 - Part 2/2 - Boot Process; logs (dmesg, logs, journalctl) & init (systemd&SysV) 📝
+# Part 2 of 2: Process; logs (`dmesg`, `logs`, `journalctl`) & init (systemd&SysV) 📝
 We continue with last part of 101.2.
 
 ## `dmesg` 📜

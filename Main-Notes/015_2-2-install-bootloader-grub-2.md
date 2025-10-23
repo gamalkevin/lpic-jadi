@@ -1,4 +1,4 @@
-# 015 - 102.2 - Part 2 of 2 - Install Bootloader - GRUB 2
+# Part 2 of 2: Install Bootloader - GRUB 2
 
 ## **GRUB 2 (GRand Unified Bootloader v2)**
 Most widely used boot manager on Linux.

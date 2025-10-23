@@ -2,7 +2,7 @@
 *Moved the actual preface  to [README.md](/README.md)*
 
 ## Current Progress
-As of **28 Sept 2025**, I'm just getting started with video [012](https://youtu.be/WHsjpzCYXo8?si=qbm-kI3OkxxE3Hmj).
+As of **20 Oct 2025**, I'm in video [020](https://youtu.be/IBnxIX_WceI?si=v3DjbX46bYAEbwz2).
 
 ## ~~Target & Learning Strategy~~
 ~~I target to finish at least 1 video daily *(with strict adherence to '**the strategy**')*. The strategy is as follows:~~

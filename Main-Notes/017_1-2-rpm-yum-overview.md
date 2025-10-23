@@ -1,31 +1,21 @@
-# Overview of RPM and YUM/Zypper/DNF
+# Part 1 of 2: RPM & Yum Package Management
 
 ## 102.5: Use RPM and YUM package management
 
-| **Weight**      | **3**                                                                              |
-| --------------- | ---------------------------------------------------------------------------------- |
-| **Description** | Candidates should be able to perform package management using RPM, YUM and Zypper. |
-
-**Key Knowledge Areas:**
-- Install, re-install, upgrade, and remove packages using RPM, YUM, and Zypper.
-- Obtain information on RPM packages such as version, status, dependencies, integrity, and signatures.
-- Determine what files a package provides and find which package a specific file comes from.
-- Awareness of `dnf`.
-
-**Common Files, Terms, and Utilities:**
-
-- `rpm`
-- `rpm2cpio`
-- `/etc/yum.conf`
-- `/etc/yum.repos.d/`
-- `yum`
-- `zypper`
+| **Weight**                              | **3**                                                                                                                                                                                                                                                                                                              |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description**                         | Candidates should be able to perform package management using RPM, YUM and Zypper.                                                                                                                                                                                                                                 |
+| **Key Knowledge Areas:**                | - Install, re-install, upgrade, and remove packages using RPM, YUM, and Zypper.<br>- Obtain information on RPM packages such as version, status, dependencies, integrity, and signatures.<br>- Determine what files a package provides and find which package a specific file comes from.<br>- Awareness of `dnf`. |
+| **Common Files, Terms, and Utilities:** | - `rpm`<br>- `rpm2cpio`<br>- `/etc/yum.conf`<br>- `/etc/yum.repos.d/`<br>- `yum`<br>- `zypper`                                                                                                                                                                                                                     |
 
 ---
 
-For some reason, Jadi starts 102.5 (RPM/Yum package management) before 102.4 (Debian package management)
+For some reason, Jadi starts 102.5 (RPM/Yum package management) before 102.4 (Debian package management). I will follow Jadi's order. 
+
+Turns out, earlier LPIC-1 versions (like v4.0, perhaps the one Jadi used) had them swapped, which caused confusion — but the **newer 5.0 objectives** are the current and correct layout: 102.4 is for Debian Package Management, and 102.5 is for RHEL & its clones.
 
 ---
+
 ## `rpm`, `yum`, `zypper` (and `dnf`)
 
 *Access `yum` and `rpm` cheat-sheet [here](/References/yum-zypper-cheatsheet.md).*
@@ -86,7 +76,7 @@ One day when I try to update with `sudo dnf upgrade`, I encountered an error fol
 
 That’s where these options come in 👇
 
-## ⚙️ Options Explained
+#### ⚙️ Options Explained
 
 | **Option**       | **Meaning**                                                                         | **When to Use It**                                                                                                  |
 | ---------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
@@ -125,3 +115,17 @@ Packages Altered:
     Upgraded vim-filesystem-2:9.1.083-5.el10.noarch            @@System
 
 ```
+#### 📦 Packages Altered
+
+| Type        | Package                                            | Repository | Notes                                                                                                          |
+| ----------- | -------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------- |
+| **Install** | `kernel-6.12.0-55.39.1.el10_0.x86_64` + submodules | `@baseos`  | New kernel and related modules installed — DNF installs new kernels **instead of replacing** old ones (safer). |
+| **Upgrade** | `kernel-tools`, `kernel-tools-libs`                | `@baseos`  | These replaced older versions (`55.37.1 → 55.39.1`).                                                           |
+| **Upgrade** | `libssh`, `libssh-config`                          | `@baseos`  | Security or compatibility update (minor build change).                                                         |
+| **Upgrade** | `vim-filesystem`                                   | `@baseos`  | Small revision bump (`-5.el10` → `-5.el10_0.1`). Likely a maintenance release.                                 |
+
+#### 🧠 Key Observations
+1. ✅ **`--allowerasing` didn’t remove anything this time** — no erased packages shown.  
+    (If there were conflicts, they’d appear as “Erase … @System” lines.)
+2. ✅ **`--skip-broken` didn’t skip anything either**, since all transactions completed normally.
+3. ⚙️ **A new kernel was installed**, so you should now have **two (or more)** kernel versions in `/boot` — DNF keeps older ones automatically.

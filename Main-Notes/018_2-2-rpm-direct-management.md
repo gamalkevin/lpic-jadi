@@ -1,4 +1,6 @@
-# Using RPM to directly manage packages
+# Part 2 of 2: RPM Package Management 
+
+## Using RPM to directly manage packages
 
 *Access `yum` and `rpm` cheat-sheet [here](yum-zypper-cheatsheet.md).*
 
@@ -9,13 +11,13 @@
 	  - Longforms still exist too.
 - This is similar to `pacman`'s  commands *(think `sudo pacman -Syu` for updating the system)*.
 
-# 🛄 Verifying Package ☑️
+## 🛄 Verifying Package ☑️
 > **Verifying a package** checks the installed files against the information saved in the RPM database. It compares things like the file’s size, checksum, permissions, type, owner, and group.  
 > If something doesn’t match, RPM will show the differences.  
 > Files that weren’t installed (for example, skipped docs using `--excludedocs`) are ignored silently.
 
 
-## 1️⃣ Using `rpm -V`
+### 1️⃣ Using `rpm -V`
 A sysadmin might check whether a package has been tampered or not with the command `# rpm -Vv {package name}`.
 
 For example:
@@ -68,7 +70,7 @@ Here's a complete explanation of the test failure codes[^1]:
 | **T** | Time differs          | Modification time (`mtime`) differs.                                |
 | **P** | Capabilities differ   | File capabilities differ.                                           |
 
-## 2️⃣ Using `rpm -K`
+### 2️⃣ Using `rpm -K`
 This one checks the associated `.rpm` file as opposed to the installed files. Useful before installing.
 
 Let's try it with `tmux`:
@@ -83,8 +85,8 @@ tmux-3.5a-2.2.x86_64.rpm:
     MD5 digest: OK
 ```
 
-# 🫗Extracting RPM files
-## `rpm2cpio`
+## 🫗Extracting RPM files
+### `rpm2cpio`
 
 The `.cpio` is an archive format like `.zip`, `.rar`, or `.tar`. 
 - We can use `rpm2cpio` to convert the `.rpm` files.
